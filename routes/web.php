@@ -12,5 +12,5 @@
 */
 
 Route::get('/', function () {
-    return view('dashboard.contents.dashboard');
+    return view('website.contents.home');
 });
