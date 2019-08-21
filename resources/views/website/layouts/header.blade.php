@@ -7,9 +7,9 @@
                             <a href="index.html"><img src="{{ asset('assets/website/images/logo.png') }}" class="logo_main" alt="" width="118" height="69"></a>
                         </div>
                     </div>
-                    <div class="contact_button">
-                        <a class="first_button" href="our-causes.html">Donate</a><a class="second_button" href="about-us-style-1.html">Become Volunteer</a> </div>
-                    <div class="contact_socials">
+                    {{-- <div class="contact_button">
+                        <a class="first_button" href="our-causes.html">Donate</a><a class="second_button" href="about-us-style-1.html">Become Volunteer</a> </div> --}}
+                    {{-- <div class="contact_socials">
                         <div class="sc_socials sc_socials_type_icons sc_socials_shape_round sc_socials_size_tiny">
                             <div class="sc_socials_item"><a href="#" target="_blank" class="social_icons social_twitter"><span class="icon-twitter"></span></a></div>
                             <div class="sc_socials_item"><a href="#" target="_blank" class="social_icons social_facebook"><span class="icon-facebook"></span></a></div>
@@ -17,13 +17,15 @@
                             <div class="sc_socials_item"><a href="#" target="_blank" class="social_icons social_youtube"><span class="icon-youtube"></span></a></div>
                             <div class="sc_socials_item"><a href="#" target="_blank" class="social_icons social_pinterest-circled"><span class="icon-pinterest-circled"></span></a></div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             <div class="top_panel_bottom">
                 <div class="content_wrap clearfix">
                     <nav class="menu_main_nav_area menu_hover_fade">
                         <ul id="menu_main" class="menu_main_nav">
+                                <li class="menu-item current-menu-item menu-item-home current-menu-ancestor"><a href="index.html"><span>Home</span></a></li>
+{{-- 
                             <li class="menu-item current-menu-item menu-item-home current-menu-ancestor current-menu-parent menu-item-has-children"><a href="#"><span>Home</span></a>
                                 <ul class="sub-menu">
                                     <li class="menu-item current-menu-item page-item-2"><a href="index.html"><span>Home 1</span></a></li>
@@ -31,26 +33,8 @@
                                     <li class="menu-item"><a href="home-3.html"><span>Home 3</span></a></li>
                                     <li class="menu-item"><a href="home-4-boxed.html"><span>Home Boxed</span></a></li>
                                 </ul>
-                            </li>
-                            <li class="menu-item menu-item-has-children"><a href="#"><span>Features</span></a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item"><a href="typography.html"><span>Typography</span></a></li>
-                                    <li class="menu-item"><a href="shortcodes.html"><span>Shortcodes</span></a></li>
-                                    <li class="menu-item menu-item-has-children"><a href="#"><span>Gallery</span></a>
-                                        <ul class="sub-menu">
-                                            <li class="menu-item"><a href="gallery-grid.html"><span>Grid</span></a></li>
-                                            <li class="menu-item"><a href="gallery-cobbles.html"><span>Cobbles</span></a></li>
-                                            <li class="menu-item1"><a href="gallery-masonry.html"><span>Masonry</span></a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item"><a href="events.html"><span>Events</span></a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item menu-item-has-children menu-item-45"><a href="#"><span>About Us</span></a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item"><a href="about-us-style-1.html"><span>Style 1</span></a></li>
-                                    <li class="menu-item"><a href="about-us-style-2.html"><span>Style 2</span></a></li>
-                                </ul>
+                            </li> --}}
+                            <li class="menu-item menu-item-45"><a href="about-us-style-1.html"><span>About Us</span></a>
                             </li>
                             <li class="menu-item menu-item-has-children"><a href="#"><span>Our Causes</span></a>
                                 <ul class="sub-menu">
