@@ -24,7 +24,7 @@
                 <div class="content_wrap clearfix">
                     <nav class="menu_main_nav_area menu_hover_fade">
                         <ul id="menu_main" class="menu_main_nav">
-                                <li class="menu-item current-menu-item menu-item-home current-menu-ancestor"><a href="index.html"><span>Home</span></a></li>
+                                <li class="menu-item current-menu-item menu-item-home current-menu-ancestor"><a href="{{ route('home') }}"><span>Home</span></a></li>
 {{-- 
                             <li class="menu-item current-menu-item menu-item-home current-menu-ancestor current-menu-parent menu-item-has-children"><a href="#"><span>Home</span></a>
                                 <ul class="sub-menu">
@@ -34,12 +34,12 @@
                                     <li class="menu-item"><a href="home-4-boxed.html"><span>Home Boxed</span></a></li>
                                 </ul>
                             </li> --}}
-                        <li class="menu-item"><a href="our-causes.html"><span>Our Causes</span></a>
+                        <li class="menu-item"><a href="{{ route('our_causes') }}"><span>Our Causes</span></a>
                         </li>
-                        <li class="menu-item"><a href="classic-without-sidebar.html"><span>News</span></a>
+                        <li class="menu-item"><a href="{{ route('news') }}"><span>News</span></a>
                         </li>
-                        <li class="menu-item menu-item-45"><a href="about-us-style-1.html"><span>About Us</span></a></li>
-                            <li class="menu-item"><a href="contacts.html"><span>Contacts</span></a></li>
+                        <li class="menu-item menu-item-45"><a href="{{ route('about_us') }}"><span>About Us</span></a></li>
+                            <li class="menu-item"><a href="{{ route('contacts') }}"><span>Contacts</span></a></li>
                         </ul>
                     </nav>
                     <div class="search_wrap search_style_fullscreen search_state_closed">
