@@ -1,6 +1,6 @@
 <div class="header">
     <div class="header-left">
-        <a href="index.html" class="logo">
+        <a href="{{ route('dashboard') }}" class="logo">
             <img src="{{ asset('assets/img/logo.png') }}" width="40" height="40" alt="">
         </a>
     </div>
@@ -88,7 +88,7 @@
             <a href="profile.html" class="dropdown-toggle user-link" data-toggle="dropdown" title="Admin">
                 <span class="user-img"><img class="img-circle" src="{{ asset('assets/img/user.jpg') }}" width="40" alt="Admin">
                     <span class="status online"></span></span>
-                <span>Admin</span>
+                    <span> {{ Auth::user()->name }}</span>
                 <i class="caret"></i>
             </a>
             <ul class="dropdown-menu">

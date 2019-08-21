@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Session;
 use Auth;
+use Notify;
 
 class DashboardController extends Controller
 {
@@ -35,7 +36,7 @@ class DashboardController extends Controller
             }
             return redirect()->intended('/dashboard');
         } else {
-            Session::put('alert-danger', 'Invalid username or password');
+            Notify::error('Invalid username or password', 'Error');
             return redirect()->back();
         }
     }

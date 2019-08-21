@@ -14,6 +14,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/dataTables.bootstrap.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/select2.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
+    {!! Notify::render() !!}
+    
     {{-- Page Styles --}}
     @yield('style')
 </head>
@@ -40,6 +42,7 @@
     <script type="text/javascript" src="{{ asset('assets/js/jquery.slimscroll.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/select2.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/app.js') }}"></script>
+    <script src="{{asset('js/angular.min.js')}}"></script>
     {{-- Page Scripts --}}
     @yield('script')
 </body>
