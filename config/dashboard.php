@@ -3,5 +3,5 @@
 return [
 
    'title'=> 'Momata',
-   'view_root'=> 'website.contents.',
+   'view_root'=> 'dashboard.contents.',
 ];

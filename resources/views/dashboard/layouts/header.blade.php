@@ -5,7 +5,7 @@
         </a>
     </div>
     <div class="page-title-box pull-left">
-        <h3>Momata</h3>
+        <h3>{{ config('dashboard.title') }}</h3>
     </div>
     <a id="mobile_btn" class="mobile_btn pull-left" href="#sidebar"><i class="fa fa-bars" aria-hidden="true"></i></a>
     <ul class="nav navbar-nav navbar-right user-menu pull-right">
@@ -95,7 +95,7 @@
                 <li><a href="profile.html">My Profile</a></li>
                 <li><a href="edit-profile.html">Edit Profile</a></li>
                 <li><a href="settings.html">Settings</a></li>
-                <li><a href="login.html">Logout</a></li>
+                <li><a href="{{ route('logout') }}">Logout</a></li>
             </ul>
         </li>
     </ul>
@@ -105,7 +105,7 @@
             <li><a href="profile.html">My Profile</a></li>
             <li><a href="edit-profile.html">Edit Profile</a></li>
             <li><a href="settings.html">Settings</a></li>
-            <li><a href="login.html">Logout</a></li>
+            <li><a href="{{ route('logout') }}">Logout</a></li>
         </ul>
     </div>
 </div>
