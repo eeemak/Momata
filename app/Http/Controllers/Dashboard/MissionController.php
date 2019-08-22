@@ -43,13 +43,13 @@ class MissionController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'description' => 'required',
-            'image' => 'file|mimes:jpg,jpeg,png,bmp|max:500',
+            'image' => 'file|mimes:'.config('dashboard.modules.mission.upload_accept_file_type').'|max:'.config('dashboard.modules.mission.upload_max_file_size'),
         ]);
         $mission = new Mission();
         $mission->fill($request->input());
         if($request->image){
             $image = $request->image;
-            $destination = 'uploads/mission/';
+            $destination = config('dashboard.modules.mission.upload_file_location');
             $image_path = $destination . time() . "-" . $image->getClientOriginalName();
             $image->move($destination, $image_path);
             $mission->image_path = $image_path;
@@ -96,7 +96,7 @@ class MissionController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'description' => 'required',
-            'image' => 'file|mimes:jpg,jpeg,png,bmp|max:500',
+            'image' => 'file|mimes:'.config('dashboard.modules.mission.upload_accept_file_type').'|max:'.config('dashboard.modules.mission.upload_max_file_size'),
         ]);
         $mission->fill($request->input());
         if($request->image){

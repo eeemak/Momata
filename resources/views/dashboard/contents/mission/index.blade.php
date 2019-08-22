@@ -23,6 +23,7 @@
                 <table class="table custom-table datatable">
                     <thead>
                         <tr>
+                            <th style="width: 15px">#</th>
                             <th>Mission</th>
                             <th style="width: 100px">Featured</th>
                             <th style="width: 100px">Status</th>
@@ -32,9 +33,10 @@
                     <tbody>
                         @foreach ($mission_list as $item)
                         <tr>
+                            <td>{{ $loop->iteration }}</td>
                             <td>
                                 <div class="product-det">
-                                    <img src="{{ asset($item->image_path ?? 'images/no-image.png') }}" alt="">
+                                    <img src="{{ asset($item->image_path ?? 'images/no-image.png') }}" alt="image" style="height: 50px; width: 50px; margin-top: -5px;">
                                     <div class="product-desc">
                                         <h2><a href="#">{{ $item->name }}</a> <span>{{ $item->description }} </span></h2></div>
                                 </div>
@@ -98,7 +100,7 @@
                     <div class="form-group {{ $errors->has('image') ? ' has-error' : '' }}">
                         <label>Upload Files</label>
                         <input name="image" class="form-control" type="file">
-                        <small>Max: 500 KB</small>
+                        <small>Max: {{ config('dashboard.modules.mission.upload_max_file_size') }} KB</small>
                         <small class="text-danger">{{ $errors->first('image') }}</small>
                     </div>
                     <div class="row">
