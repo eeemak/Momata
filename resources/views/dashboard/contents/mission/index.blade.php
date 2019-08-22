@@ -102,33 +102,33 @@
                         <small class="text-danger">{{ $errors->first('image') }}</small>
                     </div>
                     <div class="row">
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label class="col-md-3 control-label">Featured</label>
-                                    <div class="col-md-9">
-                                        <label class="radio-inline">
-                                            <input type="radio" name="featured" {{ old('featured') ? 'checked' : null }} value="1"> Featured
-                                        </label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="featured"  {{ !old('featured') ? 'checked' : null }} value="0"> Normal
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label class="col-md-3 control-label">Active</label>
-                                    <div class="col-md-9">
-                                        <label class="radio-inline">
-                                            <input type="radio" name="active"  {{ old('active') ? 'checked' : null }} value="1"> Active
-                                        </label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="active" {{ !old('active') ? 'checked' : null }} value="0"> Inactive
-                                        </label>
-                                    </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Featured</label>
+                                <div class="col-md-9">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="featured" value="1"> Featured
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="featured" checked="checked" value="0"> Normal
+                                    </label>
                                 </div>
                             </div>
                         </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Active</label>
+                                <div class="col-md-9">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="active" checked="checked" value="1"> Active
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="active" value="0"> Inactive
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="m-t-20 text-center">
                         <button class="btn btn-primary btn-lg">Create Mission</button>
                     </div>
