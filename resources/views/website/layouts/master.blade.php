@@ -33,17 +33,8 @@
 		<div class="top_panel_fixed_wrap"></div>
             {{-- Header --}}
             @include('website.layouts.header')
-            {{-- Slider --}}
-			@include('website.layouts.slider')
-			<div class="page_content_wrap page_paddings_no">
-                <div class="content_wrap">
                     {{-- Content --}}
 					@yield('content')
-					<!-- </div> class="content"> -->
-				</div>
-				<!-- </div> class="content_wrap"> -->
-			</div>
-			<!-- </.page_content_wrap> -->
 			{{-- Footer --}}
             @include('website.layouts.footer')
 			<!-- /.footer_wrap -->

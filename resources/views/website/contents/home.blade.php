@@ -2,6 +2,10 @@
 @section('style')  
 @endsection
 @section('content')
+{{-- Slider --}}
+			@include('website.layouts.slider')
+            <div class="page_content_wrap page_paddings_no">
+                <div class="content_wrap">
 <div class="content">
 						<div class="itemscope post_item post_item_single post_featured_default post_format_standard page type-page status-publish hentry" itemscope itemtype="http://schema.org/Article">
 							<div class="post_content" itemprop="articleBody">
@@ -353,6 +357,11 @@
 						<!-- </div> class="itemscope post_item post_item_single post_featured_default post_format_standard page type-page status-publish hentry" itemscope itemtype="http://schema.org/Article"> -->
 					</div>
 					<!-- </div> class="content"> -->
+					<!-- </div> class="content"> -->
+                    </div>
+				<!-- </div> class="content_wrap"> -->
+			</div>
+			<!-- </.page_content_wrap> -->
 @endsection
 @section('script')
 @endsection

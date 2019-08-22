@@ -5,7 +5,7 @@
 <div class="top_panel_title top_panel_style_1  title_present scheme_original">
 				<div class="top_panel_title_inner top_panel_inner_style_1  title_present_inner">
 					<div class="content_wrap">
-						<h1 class="page_title">All News</h1> </div>
+						<h1 class="page_title">All Events</h1> </div>
 				</div>
 			</div>
 			<div class="page_content_wrap page_paddings_yes">
