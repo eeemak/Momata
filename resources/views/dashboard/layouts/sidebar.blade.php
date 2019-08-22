@@ -3,10 +3,13 @@
             <div id="sidebar-menu" class="sidebar-menu">
                 <ul>
                     <li class="menu-title">Main</li>
-                    <li class="active">
-                        <a href="index.html"><i class="fa fa-dashboard"></i> Dashboard</a>
+                    <li class="{{ Request::is('dashboard') ? 'active' : null }}">
+                        <a href="{{ route('dashboard') }}"><i class="fa fa-dashboard"></i> Dashboard </a>
                     </li>
-                    <li>
+                    <li class="{{ Request::is('dashboard/mission') ? 'active' : null }}">
+                        <a href="{{ route('mission.index') }}"><i class="fa fa-bullseye"></i> Missions</a>
+                    </li>
+                    {{-- <li>
                         <a href="chat.html"><i class="fa fa-comments" aria-hidden="true"></i> Chat <span class="badge bg-primary pull-right">5</span></a>
                     </li>
                     <li class="submenu">
@@ -192,7 +195,7 @@
                                 <a href="javascript:void(0);"><span>Level 1</span></a>
                             </li>
                         </ul>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
         </div>

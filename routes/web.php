@@ -17,5 +17,8 @@ Route::group(['prefix'=>'dashboard'], function(){
     Route::group(['middleware' => 'auth'], function () {
         Route::get('/logout', ['as' => 'logout', 'uses' => 'DashboardController@logout']);
         Route::get('/', ['as'=>'dashboard', 'uses'=>'DashboardController@dashboard']);
+        Route::resource('mission', 'MissionController');
+        Route::resource('our-causes', 'OurCauseController');
+        Route::resource('news', 'NewsController');
     });
 });
