@@ -18,6 +18,9 @@ class WebsiteController extends Controller
     public function events(){
         return view($this->getPage('events'));
     }
+    public function eventDetails(){
+        return view($this->getPage('event_detail'));
+    }
     public function about_us(){
         return view($this->getPage('about_us'));
     }

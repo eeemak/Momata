@@ -312,7 +312,7 @@
 																		<p class="sc_events_item_date">October 10, 2016 8:00 am</p>
 																		<h5 class="sc_events_item_title"><a href="event.html">Is a Nonprofit Internship the Best Choice for You?</a></h5>
 																		<div class="sc_events_item_description">
-																			<p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo...</p><a href="event.html" class="sc_events_item_readmore">Read more</a>																			</div>
+																			<p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo...</p><a href="{{ route('event_detail') }}" class="sc_events_item_readmore">Read more</a>																			</div>
 																	</div>
 																</div>
 															</div>
@@ -327,7 +327,7 @@
 																		<p class="sc_events_item_date">December 5, 2016 8:00 am</p>
 																		<h5 class="sc_events_item_title"><a href="event.html">Volunteers All-state Meeting</a></h5>
 																		<div class="sc_events_item_description">
-																			<p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo...</p><a href="event.html" class="sc_events_item_readmore">Read more</a>																			</div>
+																			<p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo...</p><a href="{{ route('event_detail') }}" class="sc_events_item_readmore">Read more</a>																			</div>
 																	</div>
 																</div>
 															</div>
