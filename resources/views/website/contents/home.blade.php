@@ -75,8 +75,8 @@
                             <div class="wrapper">
                                 <div class="h55"></div>
                                 <div id="sc_donations_108588160" class="sc_donations sc_donations_style_excerpt">
-                                    <h2 class="sc_donations_title sc_item_title">Our Causes</h2>
-                                    <div class="sc_donations_descr sc_item_descr">You can help lots of people by donating little. <b>See our causes.</b></div>
+                                    <h2 class="sc_donations_title sc_item_title">Our Project & Program</h2>
+                                    <div class="sc_donations_descr sc_item_descr">You can help lots of people by donating little. <b>See our project.</b></div>
                                     <div class="sc_donations_columns_wrap">
                                         <div class="post_item_excerpt post_type_donation sc_donations_column-1_3">
                                             <div class="post_featured">
@@ -172,25 +172,6 @@
                         </div>
                     </div>
                 </div>
-								<div class="block_1474278098004">
-									<div class="column_container">
-										<div class="column-inner">
-											<div class="wrapper">
-												<div class="h15"></div>
-												<div id="sc_call_to_action_715074706" class="sc_call_to_action sc_call_to_action_accented sc_call_to_action_style_1 sc_call_to_action_align_left margin_top_huge margin_bottom_huge">
-													<div class="sc_call_to_action_info">
-														<h2 class="sc_call_to_action_title sc_item_title sc_item_title_without_descr">Donate Blood <b>& Save a Life</b></h2>
-														<div class="sc_call_to_action_descr sc_item_descr">Pellentesque lacinia urna eget luctus faucibus. Sus<br /> pendisse potenti. Morbi accumsan, arcu et feugiat hen<br /> drerit, odio quam egestas risus, tincidunt gravida est<br /> risus ut enim.</div>
-														<div class="sc_call_to_action_buttons sc_item_buttons">
-															<div class="sc_call_to_action_button sc_item_button"><a href="#" class="sc_button sc_button_square sc_button_style_filled3 sc_button_size_large  sc_button_iconed icon-arrow">Register Now</a></div>
-														</div>
-													</div>
-												</div>
-												<div class="h20"></div>
-											</div>
-										</div>
-									</div>
-								</div>
 								<div class="wrap">
 									<div class="column_container">
 										<div class="column-inner">

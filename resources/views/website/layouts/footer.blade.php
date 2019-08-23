@@ -6,7 +6,7 @@
                         <div class="contacts_wrap">
                             <div class="contacts_wrap_inner">
                                 <div class="logo">
-                                    <a href="index.html"><img src="{{ asset('assets/website/images/logo-footer.png') }}" class="logo_footer" alt="" width="237" height="121"></a>
+                                    <a href="index.html"><img src="{{ asset('assets/website/images/logo-2.jpg') }}" class="logo_footer" alt="" width="237" height="121"></a>
                                 </div>
                                 <div class="contacts_address">
                                     <p>Nulla fringilla orci mauris, nec tempor lectus consequat ac. Nulla consectetur magna in velit pellentesque egestas sed eget nibh. Fusce nec viverra dolor. Phasellus faucibus egestas nulla, vel suscipit metus maximus id. Phasellus blandit porttitor
