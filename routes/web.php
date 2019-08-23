@@ -24,5 +24,6 @@ Route::group(['prefix'=>'dashboard'], function(){
         Route::resource('mission', 'MissionController');
         Route::resource('project', 'ProjectController');
         Route::resource('news', 'NewsController');
+        Route::resource('event', 'EventController');
     });
 });

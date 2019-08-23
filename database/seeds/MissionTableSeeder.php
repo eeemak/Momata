@@ -14,15 +14,15 @@ class MissionTableSeeder extends Seeder
     {
         Mission::insert([
             [
-                'name'=>'title 1',
+                'title'=>'title 1',
                 'description'=>'this is description 1',
             ],
             [
-                'name'=>'title 2',
+                'title'=>'title 2',
                 'description'=>'this is description 2',
             ],
             [
-                'name'=>'title 3',
+                'title'=>'title 3',
                 'description'=>'this is description 3',
             ],
         ]);

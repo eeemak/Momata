@@ -15,7 +15,7 @@ class CreateMissionsTable extends Migration
     {
         Schema::create('missions', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('title');
             $table->text('description');
             $table->string('image_path')->nullable();
             $table->boolean('featured')->default(false);

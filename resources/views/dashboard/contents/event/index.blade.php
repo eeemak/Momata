@@ -7,10 +7,10 @@
 <div class="content container-fluid">
     <div class="row">
         <div class="col-xs-4">
-            <h4 class="page-title">Missions</h4>
+            <h4 class="page-title">Events</h4>
         </div>
         <div class="col-xs-8 text-right m-b-20">
-            <a href="#" class="btn btn-primary rounded pull-right" data-toggle="modal" data-target="#create"><i class="fa fa-plus"></i> Create Mission</a>
+            <a href="#" class="btn btn-primary rounded pull-right" data-toggle="modal" data-target="#create"><i class="fa fa-plus"></i> Create Event</a>
             <div class="view-icons">
                 <a href="#" class="grid-view btn btn-link"><i class="fa fa-th"></i></a>
                 <a href="#" class="list-view btn btn-link active"><i class="fa fa-bars"></i></a>
@@ -20,33 +20,33 @@
     <div class="row">
         <div class="col-md-12">
             <div class="table-responsive">
-                <table class="table custom-table {{ config('dashboard.modules.mission.use_datatable') ? 'datatable' : null }}">
+                <table class="table custom-table {{ config('dashboard.modules.event.use_datatable') ? 'datatable' : null }}">
                     <thead>
                         <tr>
                             <th style="width: 15px">#</th>
-                            <th>Mission</th>
+                            <th>Event</th>
                             <th style="width: 100px">Featured</th>
                             <th style="width: 100px">Status</th>
                             <th style="width: 50px" class="text-right">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($mission_list as $item)
+                        @foreach ($event_list as $item)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>
                                 <div class="product-det">
                                     <img src="{{ asset($item->image_path ?? 'images/no-image.png') }}" alt="image" style="height: 50px; width: 50px; margin-top: -5px;">
                                     <div class="product-desc">
-                                        <h2><a href="{{ route('mission.show', $item) }}">{{ str_limit($item->title,60) }}</a> <span>{{ str_limit($item->description,70) }} </span></h2></div>
+                                        <h2><a href="{{ route('event.show', $item) }}">{{ str_limit($item->title,60) }}</a> <span>{{ str_limit($item->description,70) }} </span></h2></div>
                                 </div>
                             </td>
                             <td>
                                 <div class="dropdown action-label">
                                     <a class="btn btn-white btn-sm rounded dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-dot-circle-o {{ $item->featured ? 'text-success' : 'text-primary' }}"></i> {{ $item->featured ? 'Featured' : 'Normal' }} <i class="caret"></i></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="@if(!$item->featured){{ route('change_feature',['model'=>'Mission', 'id'=>$item->id, 'featured'=>true]) }}@endif"><i class="fa fa-dot-circle-o text-success"></i> Featured</a></li>
-                                        <li><a href="@if($item->featured){{ route('change_feature',['model'=>'Mission', 'id'=>$item->id, 'featured'=>false]) }}@endif"><i class="fa fa-dot-circle-o text-primary"></i> Normal</a></li>
+                                        <li><a href="@if(!$item->featured){{ route('change_feature',['model'=>'Event', 'id'=>$item->id, 'featured'=>true]) }}@endif"><i class="fa fa-dot-circle-o text-success"></i> Featured</a></li>
+                                        <li><a href="@if($item->featured){{ route('change_feature',['model'=>'Event', 'id'=>$item->id, 'featured'=>false]) }}@endif"><i class="fa fa-dot-circle-o text-primary"></i> Normal</a></li>
                                     </ul>
                                 </div>
                             </td>
@@ -54,8 +54,8 @@
                                 <div class="dropdown action-label">
                                     <a class="btn btn-white btn-sm rounded dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-dot-circle-o {{ $item->active ? 'text-success' : 'text-danger' }}"></i> {{ $item->active ? 'Active' : 'Inactive' }} <i class="caret"></i></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="@if(!$item->active){{ route('change_activation',['model'=>'Mission', 'id'=>$item->id, 'active'=>true]) }}@endif"><i class="fa fa-dot-circle-o text-success"></i> Active</a></li>
-                                        <li><a href="@if($item->active){{ route('change_activation',['model'=>'Mission', 'id'=>$item->id, 'active'=>false]) }}@endif"><i class="fa fa-dot-circle-o text-danger"></i> Inactive</a></li>
+                                        <li><a href="@if(!$item->active){{ route('change_activation',['model'=>'Event', 'id'=>$item->id, 'active'=>true]) }}@endif"><i class="fa fa-dot-circle-o text-success"></i> Active</a></li>
+                                        <li><a href="@if($item->active){{ route('change_activation',['model'=>'Event', 'id'=>$item->id, 'active'=>false]) }}@endif"><i class="fa fa-dot-circle-o text-danger"></i> Inactive</a></li>
                                     </ul>
                                 </div>
                             </td>
@@ -63,9 +63,9 @@
                                 <div class="dropdown">
                                     <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
                                     <ul class="dropdown-menu pull-right">
-                                        <li><a href="{{ route('mission.show', $item) }}"><i class="fa fa-eye m-r-5"></i> View Detail</a></li>
-                                        <li><a href="{{ route('mission.edit', $item) }}"><i class="fa fa-pencil m-r-5"></i> Edit</a></li>
-                                        <li><a href="#" data-toggle="modal" data-target="#delete" ng-click="delete_url = '{{ route('mission.destroy', $item) }}'"><i class="fa fa-trash-o m-r-5"></i> Delete</a></li>
+                                        <li><a href="{{ route('event.show', $item) }}"><i class="fa fa-eye m-r-5"></i> View Detail</a></li>
+                                        <li><a href="{{ route('event.edit', $item) }}"><i class="fa fa-pencil m-r-5"></i> Edit</a></li>
+                                        <li><a href="#" data-toggle="modal" data-target="#delete" ng-click="delete_url = '{{ route('event.destroy', $item) }}'"><i class="fa fa-trash-o m-r-5"></i> Delete</a></li>
                                     </ul>
                                 </div>
                             </td>
@@ -82,14 +82,14 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <div class="modal-content modal-lg">
             <div class="modal-header">
-                <h4 class="modal-title">Create Mission</h4>
+                <h4 class="modal-title">Create Event</h4>
             </div>
             <div class="modal-body">
-                <form action="{{ route('mission.store') }}" method="POST" autocomplete="off" enctype="multipart/form-data">
+                <form action="{{ route('event.store') }}" method="POST" autocomplete="off" enctype="multipart/form-data">
                     @csrf
                     @method('POST')
                     <div class="form-group {{ $errors->has('title') ? ' has-error' : '' }}">
-                        <label>Mission Title <span class="text-danger">*</span></label>
+                        <label>Event Title <span class="text-danger">*</span></label>
                         <input name="title" class="form-control" type="text" value="{{ old('title') }}">
                         <small class="text-danger">{{ $errors->first('title') }}</small>
                     </div>
@@ -98,10 +98,38 @@
                         <textarea name="description" rows="5" cols="5" class="form-control summernote" placeholder="Enter your description here">{{ old('description') }}</textarea>
                         <small class="text-danger">{{ $errors->first('description') }}</small>
                     </div>
+                    <div class="form-group {{ $errors->has('vanue') ? ' has-error' : '' }}">
+                        <label>Vanue</label>
+                        <input name="vanue" class="form-control" type="text" value="{{ old('vanue') }}">
+                        <small class="text-danger">{{ $errors->first('vanue') }}</small>
+                    </div>
+                    <div class="form-group {{ $errors->has('google_map_url') ? ' has-error' : '' }}">
+                        <label>Google Map URL</label>
+                        <input name="google_map_url" class="form-control" type="text" value="{{ old('google_map_url') }}">
+                        <small class="text-danger">{{ $errors->first('google_map_url') }}</small>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Event Start Date</label>
+                                <div class="cal-icon">
+                                    <input name="start_date" class="form-control datetimepicker" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Event End Date</label>
+                                <div class="cal-icon">
+                                    <input name="end_date" class="form-control datetimepicker" type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="form-group {{ $errors->has('image') ? ' has-error' : '' }}">
                         <label>Image</label>
                         <input name="image" class="form-control" type="file">
-                        <small>Max: {{ config('dashboard.modules.mission.upload_max_file_size') }} KB</small>
+                        <small>Max: {{ config('dashboard.modules.event.upload_max_file_size') }} KB</small>
                         <small class="text-danger">{{ $errors->first('image') }}</small>
                     </div>
                     <div class="row">
@@ -111,13 +139,13 @@
                                 <div class="col-md-9">
                                     <label class="radio-inline">
                                         @php
-                                            $featured_remain_count = \App\Models\Mission::featured_remain_count();
+                                            $featured_remain_count = \App\Models\Event::featured_remain_count();
                                         @endphp
                                         <input type="radio" name="featured" value="1" @if ($featured_remain_count <= 0) disabled @endif> Featured 
                                         @if ($featured_remain_count <= 0) 
-                                        <small class="text-danger" title="Max feature item: {{ config('dashboard.modules.mission.featured_max_item') }}">(Exceed limit)</small>
+                                        <small class="text-danger" title="Max feature item: {{ config('dashboard.modules.event.featured_max_item') }}">(Exceed limit)</small>
                                         @else 
-                                        <small class="text-primary" title="Max feature item: {{ config('dashboard.modules.mission.featured_max_item') }}">(Remain {{ $featured_remain_count }})</small>
+                                        <small class="text-primary" title="Max feature item: {{ config('dashboard.modules.event.featured_max_item') }}">(Remain {{ $featured_remain_count }})</small>
                                         @endif
                                     </label>
                                         
@@ -143,7 +171,7 @@
                         </div>
                     </div>
                     <div class="m-t-20 text-center">
-                        <button class="btn btn-primary btn-lg">Create Mission</button>
+                        <button class="btn btn-primary btn-lg">Create Event</button>
                     </div>
                 </form>
             </div>
@@ -154,7 +182,7 @@
     <div class="modal-dialog">
         <div class="modal-content modal-md">
             <div class="modal-header">
-                <h4 class="modal-title">Delete Mission</h4>
+                <h4 class="modal-title">Delete Event</h4>
             </div>
             <div class="modal-body card-box">
                 <p>Are you sure want to delete this?</p>

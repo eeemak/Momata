@@ -9,6 +9,25 @@
                     <li class="{{ Request::is('dashboard/mission') ? 'active' : null }}">
                         <a href="{{ route('mission.index') }}"><i class="fa fa-bullseye"></i> Missions</a>
                     </li>
+                    <li class="{{ Request::is('dashboard/project') ? 'active' : null }}">
+                        <a href="{{ route('project.index') }}"><i class="fa fa-tasks"></i> Our Projects</a>
+                    </li>
+                    <li class="{{ Request::is('dashboard/news') ? 'active' : null }}">
+                        <a href="{{ route('news.index') }}"><i class="fa fa-newspaper-o"></i> News</a>
+                    </li>
+                    <li class="{{ Request::is('dashboard/event') ? 'active' : null }}">
+                        <a href="{{ route('event.index') }}"><i class="fa fa-calendar"></i> Events</a>
+                    </li>
+                    @role('admin')
+                    <li class="menu-title">Administration</li>
+                    <li class="{{ Request::is('dashboard/users') ? 'active' : null }}">
+                        <a href=""><i class="fa fa-users"></i> Users </a>
+                    </li>
+                    @endrole
+                    <br>
+                    <li>
+                        <a href="{{ route('home') }}"><i class="fa fa-send"></i> Visit Website</a>
+                    </li>
                     {{-- <li>
                         <a href="chat.html"><i class="fa fa-comments" aria-hidden="true"></i> Chat <span class="badge bg-primary pull-right">5</span></a>
                     </li>

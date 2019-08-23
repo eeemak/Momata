@@ -5,12 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Mission extends Model
+class Event extends Model
 {
     use SoftDeletes;
     protected $fillable = [
         'title',
         'description',
+        'vanue',
+        'google_map_url',
         'featured',
         'active',
     ];

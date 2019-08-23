@@ -40,7 +40,7 @@ class MissionController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|max:100',
+            'title' => 'required|max:100',
             'description' => 'required',
             'image' => 'file|mimes:'.config('dashboard.modules.mission.upload_accept_file_type').'|max:'.config('dashboard.modules.mission.upload_max_file_size'),
         ]);
@@ -95,7 +95,7 @@ class MissionController extends Controller
     public function update(Request $request, Mission $mission)
     {
         $this->validate($request, [
-            'name' => 'required|max:100',
+            'title' => 'required|max:100',
             'description' => 'required',
             'image' => 'file|mimes:'.config('dashboard.modules.mission.upload_accept_file_type').'|max:'.config('dashboard.modules.mission.upload_max_file_size'),
         ]);

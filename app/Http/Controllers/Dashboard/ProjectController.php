@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use Helmesvs\Notify\Facades\Notify;
 use Illuminate\Http\Request;
+use Auth;
 
 class ProjectController extends Controller
 {
@@ -14,7 +16,9 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        //
+        $view = view(config('dashboard.view_root'). 'project.index');
+        $view->with('project_list', Project::orderBy('id', 'desc')->get());
+        return $view;
     }
 
     /**
@@ -35,7 +39,24 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required|max:100',
+            'description' => 'required',
+            'image' => 'file|mimes:'.config('dashboard.modules.project.upload_accept_file_type').'|max:'.config('dashboard.modules.project.upload_max_file_size'),
+        ]);
+        $project = new Project();
+        $project->fill($request->input());
+        if($request->image){
+            $image = $request->image;
+            $destination = config('dashboard.modules.project.upload_file_location');
+            $image_path = $destination . time() . "-" . $image->getClientOriginalName();
+            $image->move($destination, $image_path);
+            $project->image_path = $image_path;
+        }
+        $project->creator_user_id = Auth::id();
+        $project->save();
+        Notify::success('New project saved', 'Success');
+        return redirect()->back();
     }
 
     /**
@@ -46,7 +67,9 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        //
+        $view = view(config('dashboard.view_root'). 'project.detail');
+        $view->with('project', $project);
+        return $view;
     }
 
     /**
@@ -57,7 +80,9 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        //
+        $view = view(config('dashboard.view_root'). 'project.edit');
+        $view->with('project', $project);
+        return $view;
     }
 
     /**
@@ -69,7 +94,24 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required|max:100',
+            'description' => 'required',
+            'image' => 'file|mimes:'.config('dashboard.modules.project.upload_accept_file_type').'|max:'.config('dashboard.modules.project.upload_max_file_size'),
+        ]);
+        $project->fill($request->input());
+        if($request->image){
+            $image = $request->image;
+            $destination = 'uploads/project/';
+            $image_path = $destination . time() . "-" . $image->getClientOriginalName();
+            $image->move($destination, $image_path);
+            $this->delete_file($project->image_path);
+            $project->image_path = $image_path;
+        }
+        $project->updator_user_id = Auth::id();
+        $project->update();
+        Notify::success('Project updated', 'Success');
+        return redirect()->route('project.index');
     }
 
     /**
@@ -80,6 +122,14 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        //
+        $project->delete();
+        $this->delete_file($project->image_path);
+        Notify::success('Project deleted', 'Success');
+        return redirect()->route('project.index');
+    }
+    private function delete_file($file_path){
+        if(file_exists($file_path)){
+            unlink($file_path);
+        }
     }
 }
