@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\OurCauses;
+use App\Models\Project;
 use Illuminate\Http\Request;
 
-class OurCausesController extends Controller
+class ProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class OurCausesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\OurCauses  $ourCauses
+     * @param  \App\Models\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function show(OurCauses $ourCauses)
+    public function show(Project $project)
     {
         //
     }
@@ -52,10 +52,10 @@ class OurCausesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\OurCauses  $ourCauses
+     * @param  \App\Models\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function edit(OurCauses $ourCauses)
+    public function edit(Project $project)
     {
         //
     }
@@ -64,10 +64,10 @@ class OurCausesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\OurCauses  $ourCauses
+     * @param  \App\Models\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, OurCauses $ourCauses)
+    public function update(Request $request, Project $project)
     {
         //
     }
@@ -75,10 +75,10 @@ class OurCausesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\OurCauses  $ourCauses
+     * @param  \App\Models\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function destroy(OurCauses $ourCauses)
+    public function destroy(Project $project)
     {
         //
     }

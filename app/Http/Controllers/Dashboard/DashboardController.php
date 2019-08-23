@@ -61,6 +61,27 @@ class DashboardController extends Controller
         return redirect()->route('home');
     }
 
+    public function change_activation(Request $request){
+        $model = app("App\Models\\".$request->model);
+        $item = $model::findOrFail($request->id);
+        $item->active = $request->active;
+        $item->update();
+        Notify::success($request->active ? 'Item status changed to <b>Active</b>!' : 'Item status changed to <b>Inactive' .'</b>!', 'Success');
+        return redirect()->back();
+    }
+    public function change_feature(Request $request){
+        $model = app("App\Models\\".ucfirst($request->model));
+        $item = $model::findOrFail($request->id);
+        $max_feature = config('dashboard.modules.'.strtolower($request->model).'.featured_max_item');
+        if($item->where('featured', true)->count() >= $max_feature && $request->featured){
+            Notify::error('Featured item can not more than '. $max_feature, 'Error');
+            return redirect()->back();
+        }
+        $item->featured = $request->featured;
+        $item->update();
+        Notify::success($request->featured ? 'Item feature changed to <b>Featured</b>!' : 'Item feature changed to <b>Normal' .'</b>!', 'Success');
+        return redirect()->back();
+    }
     private function getPage($pageName){
         return config('dashboard.view_root') . $pageName;
     }

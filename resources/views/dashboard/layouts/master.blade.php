@@ -20,7 +20,7 @@
     @yield('style')
 </head>
 
-<body>
+<body ng-app="myApp">
     <div class="main-wrapper">
         {{-- Header --}}
         @include('dashboard.layouts.header')
@@ -43,6 +43,9 @@
     <script type="text/javascript" src="{{ asset('assets/js/select2.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/app.js') }}"></script>
     <script src="{{asset('js/angular.min.js')}}"></script>
+    <script>
+    var app = angular.module('myApp', []);
+    </script>
     {{-- Page Scripts --}}
     @yield('script')
 </body>

@@ -9,7 +9,7 @@ class WebsiteController extends Controller
     public function home(){
         return view($this->getPage('home'));
     }
-    public function our_causes(){
+    public function projects(){
         return view($this->getPage('our_causes'));
     }
     public function news(){
@@ -18,7 +18,7 @@ class WebsiteController extends Controller
     public function events(){
         return view($this->getPage('events'));
     }
-    public function eventDetails(){
+    public function event_detail(){
         return view($this->getPage('event_detail'));
     }
     public function about_us(){

@@ -13,7 +13,7 @@
 								<nav class="menu_main_nav_area menu_hover_fade">
 									<ul id="menu_main" class="menu_main_nav">
                                     	<li class="menu-item menu-item-home  {{ Request::is('/') ? 'current-menu-item' : null }}"><a href="{{ route('home') }}"><span>Home</span></a></li>
-                                        <li class="menu-item {{ Request::is('our-causes') ? 'current-menu-item' : null }}"><a href="{{ route('our_causes') }}"><span>Project/Program</span></a></li>
+                                        <li class="menu-item {{ Request::is('projects') ? 'current-menu-item' : null }}"><a href="{{ route('projects') }}"><span>Project/Program</span></a></li>
                                         <li class="menu-item  {{ Request::is('news') ? 'current-menu-item' : null }}"><a href="{{ route('news') }}"><span>News</span></a></li>
                                         <li class="menu-item  {{ Request::is('events') ? 'current-menu-item' : null }}"><a href="{{ route('events') }}"><span>Events</span></a></li>
                                         <li class="menu-item menu-item-45  {{ Request::is('about-us') ? 'current-menu-item' : null }}"><a href="{{ route('about_us') }}"><span>About Us</span></a></li>
@@ -38,12 +38,12 @@
 					<div class="panel_top">
 						<nav class="menu_main_nav_area">
 							<ul id="menu_mobile" class="menu_main_nav">
-                            <li class="menu-item current-menu-item menu-item-home current-menu-ancestor"><a href="{{ route('home') }}"><span>Home</span></a></li>
-                            <li class="menu-item"><a href="{{ route('our_causes') }}"><span>Project/Program</span></a></li>
-                            <li class="menu-item"><a href="{{ route('news') }}"><span>News</span></a></li>
-                            <li class="menu-item"><a href="{{ route('events') }}"><span>Events</span></a></li>
-                            <li class="menu-item menu-item-45"><a href="{{ route('about_us') }}"><span>About Us</span></a></li>
-							<li class="menu-item"><a href="{{ route('contacts') }}"><span>Contacts</span></a></li>		
+								<li class="menu-item menu-item-home  {{ Request::is('/') ? 'current-menu-item' : null }}"><a href="{{ route('home') }}"><span>Home</span></a></li>
+								<li class="menu-item {{ Request::is('projects') ? 'current-menu-item' : null }}"><a href="{{ route('projects') }}"><span>Project/Program</span></a></li>
+								<li class="menu-item  {{ Request::is('news') ? 'current-menu-item' : null }}"><a href="{{ route('news') }}"><span>News</span></a></li>
+								<li class="menu-item  {{ Request::is('events') ? 'current-menu-item' : null }}"><a href="{{ route('events') }}"><span>Events</span></a></li>
+								<li class="menu-item menu-item-45  {{ Request::is('about-us') ? 'current-menu-item' : null }}"><a href="{{ route('about_us') }}"><span>About Us</span></a></li>
+								<li class="menu-item  {{ Request::is('contacts') ? 'current-menu-item' : null }}"><a href="{{ route('contacts') }}"><span>Contacts</span></a></li>		
 							</ul>
 						</nav>
 						<div class="search_wrap search_style_ search_state_fixed search_ajax">

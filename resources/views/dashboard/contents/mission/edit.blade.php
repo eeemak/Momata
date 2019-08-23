@@ -1,6 +1,5 @@
 @extends('dashboard.layouts.master')
 @section('style')
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/dataTables.bootstrap.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap-datetimepicker.min.css') }}">
 @endsection
 @section('content')
@@ -25,7 +24,7 @@
                         </div>
                         <div class="form-group {{ $errors->has('description') ? ' has-error' : '' }}">
                             <label>Description</label>
-                            <textarea name="description" rows="4" cols="5" class="form-control summernote" placeholder="Enter your description here">{{ $mission->description }}</textarea>
+                            <textarea name="description" rows="5" cols="5" class="form-control summernote" placeholder="Enter your description here">{{ $mission->description }}</textarea>
                             <small class="text-danger">{{ $errors->first('description') }}</small>
                         </div>
                         <div class="form-group {{ $errors->has('image') ? ' has-error' : '' }}">
@@ -77,11 +76,8 @@
 </div>
 @endsection
 @section('script')
-    <script type="text/javascript" src="{{ asset('assets/js/jquery.dataTables.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/dataTables.bootstrap.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/moment.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/bootstrap-datetimepicker.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/plugins/morris/morris.min.js') }}"></script>
     <script>
         $('#edit').modal('show')
     </script>

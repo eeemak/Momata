@@ -39,9 +39,8 @@ class MissionController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
         $this->validate($request, [
-            'name' => 'required',
+            'name' => 'required|max:100',
             'description' => 'required',
             'image' => 'file|mimes:'.config('dashboard.modules.mission.upload_accept_file_type').'|max:'.config('dashboard.modules.mission.upload_max_file_size'),
         ]);
@@ -68,7 +67,9 @@ class MissionController extends Controller
      */
     public function show(Mission $mission)
     {
-        //
+        $view = view(config('dashboard.view_root'). 'mission.detail');
+        $view->with('mission', $mission);
+        return $view;
     }
 
     /**
@@ -94,7 +95,7 @@ class MissionController extends Controller
     public function update(Request $request, Mission $mission)
     {
         $this->validate($request, [
-            'name' => 'required',
+            'name' => 'required|max:100',
             'description' => 'required',
             'image' => 'file|mimes:'.config('dashboard.modules.mission.upload_accept_file_type').'|max:'.config('dashboard.modules.mission.upload_max_file_size'),
         ]);
@@ -104,7 +105,7 @@ class MissionController extends Controller
             $destination = 'uploads/mission/';
             $image_path = $destination . time() . "-" . $image->getClientOriginalName();
             $image->move($destination, $image_path);
-            $mission->image_path ? unlink($mission->image_path) : null;
+            $this->delete_file($mission->image_path);
             $mission->image_path = $image_path;
         }
         $mission->updator_user_id = Auth::id();
@@ -121,6 +122,14 @@ class MissionController extends Controller
      */
     public function destroy(Mission $mission)
     {
-        //
+        $mission->delete();
+        $this->delete_file($mission->image_path);
+        Notify::success('Mission deleted', 'Success');
+        return redirect()->route('mission.index');
+    }
+    private function delete_file($file_path){
+        if(file_exists($file_path)){
+            unlink($file_path);
+        }
     }
 }

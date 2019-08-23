@@ -20,7 +20,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="table-responsive">
-                <table class="table custom-table datatable">
+                <table class="table custom-table {{ config('dashboard.modules.mission.use_datatable') ? 'datatable' : null }}">
                     <thead>
                         <tr>
                             <th style="width: 15px">#</th>
@@ -38,15 +38,15 @@
                                 <div class="product-det">
                                     <img src="{{ asset($item->image_path ?? 'images/no-image.png') }}" alt="image" style="height: 50px; width: 50px; margin-top: -5px;">
                                     <div class="product-desc">
-                                        <h2><a href="#">{{ $item->name }}</a> <span>{{ $item->description }} </span></h2></div>
+                                        <h2><a href="{{ route('mission.show', $item) }}">{{ str_limit($item->name,60) }}</a> <span>{{ str_limit($item->description,160) }} </span></h2></div>
                                 </div>
                             </td>
                             <td>
                                 <div class="dropdown action-label">
                                     <a class="btn btn-white btn-sm rounded dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-dot-circle-o {{ $item->featured ? 'text-success' : 'text-primary' }}"></i> {{ $item->featured ? 'Featured' : 'Normal' }} <i class="caret"></i></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#"><i class="fa fa-dot-circle-o text-success"></i> Featured</a></li>
-                                        <li><a href="#"><i class="fa fa-dot-circle-o text-primary"></i> Normal</a></li>
+                                        <li><a href="@if(!$item->featured){{ route('change_feature',['model'=>'Mission', 'id'=>$item->id, 'featured'=>true]) }}@endif"><i class="fa fa-dot-circle-o text-success"></i> Featured</a></li>
+                                        <li><a href="@if($item->featured){{ route('change_feature',['model'=>'Mission', 'id'=>$item->id, 'featured'=>false]) }}@endif"><i class="fa fa-dot-circle-o text-primary"></i> Normal</a></li>
                                     </ul>
                                 </div>
                             </td>
@@ -54,8 +54,8 @@
                                 <div class="dropdown action-label">
                                     <a class="btn btn-white btn-sm rounded dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-dot-circle-o {{ $item->active ? 'text-success' : 'text-danger' }}"></i> {{ $item->active ? 'Active' : 'Inactive' }} <i class="caret"></i></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#"><i class="fa fa-dot-circle-o text-success"></i> Active</a></li>
-                                        <li><a href="#"><i class="fa fa-dot-circle-o text-danger"></i> Inactive</a></li>
+                                        <li><a href="@if(!$item->active){{ route('change_activation',['model'=>'Mission', 'id'=>$item->id, 'active'=>true]) }}@endif"><i class="fa fa-dot-circle-o text-success"></i> Active</a></li>
+                                        <li><a href="@if($item->active){{ route('change_activation',['model'=>'Mission', 'id'=>$item->id, 'active'=>false]) }}@endif"><i class="fa fa-dot-circle-o text-danger"></i> Inactive</a></li>
                                     </ul>
                                 </div>
                             </td>
@@ -63,8 +63,9 @@
                                 <div class="dropdown">
                                     <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
                                     <ul class="dropdown-menu pull-right">
+                                        <li><a href="{{ route('mission.show', $item) }}"><i class="fa fa-eye m-r-5"></i> View Detail</a></li>
                                         <li><a href="{{ route('mission.edit', $item) }}"><i class="fa fa-pencil m-r-5"></i> Edit</a></li>
-                                        <li><a href="#" data-toggle="modal" data-target="#delete_project"><i class="fa fa-trash-o m-r-5"></i> Delete</a></li>
+                                        <li><a href="#" data-toggle="modal" data-target="#delete" ng-click="delete_url = '{{ route('mission.destroy', $item) }}'"><i class="fa fa-trash-o m-r-5"></i> Delete</a></li>
                                     </ul>
                                 </div>
                             </td>
@@ -94,7 +95,7 @@
                     </div>
                     <div class="form-group {{ $errors->has('description') ? ' has-error' : '' }}">
                         <label>Description</label>
-                        <textarea name="description" rows="4" cols="5" class="form-control summernote" placeholder="Enter your description here">{{ old('description') }}</textarea>
+                        <textarea name="description" rows="5" cols="5" class="form-control summernote" placeholder="Enter your description here">{{ old('description') }}</textarea>
                         <small class="text-danger">{{ $errors->first('description') }}</small>
                     </div>
                     <div class="form-group {{ $errors->has('image') ? ' has-error' : '' }}">
@@ -109,8 +110,18 @@
                                 <label class="col-md-3 control-label">Featured</label>
                                 <div class="col-md-9">
                                     <label class="radio-inline">
-                                        <input type="radio" name="featured" value="1"> Featured
+                                        @php
+                                            $featured_remain_count = \App\Models\Mission::featured_remain_count();
+                                        @endphp
+                                        <input type="radio" name="featured" value="1" @if ($featured_remain_count <= 0) disabled @endif> Featured 
+                                        @if ($featured_remain_count <= 0) 
+                                        <small class="text-danger" title="Max feature item: {{ config('dashboard.modules.mission.featured_max_item') }}">(Exceed limit)</small>
+                                        @else 
+                                        <small class="text-primary" title="Max feature item: {{ config('dashboard.modules.mission.featured_max_item') }}">(Remain {{ $featured_remain_count }})</small>
+                                        @endif
                                     </label>
+                                        
+                                        
                                     <label class="radio-inline">
                                         <input type="radio" name="featured" checked="checked" value="0"> Normal
                                     </label>
@@ -139,7 +150,7 @@
         </div>
     </div>
 </div>
-<div id="delete_project" class="modal custom-modal fade" role="dialog">
+<div id="delete" class="modal custom-modal fade" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content modal-md">
             <div class="modal-header">
@@ -147,9 +158,12 @@
             </div>
             <div class="modal-body card-box">
                 <p>Are you sure want to delete this?</p>
-                <div class="m-t-20"> <a href="#" class="btn btn-default" data-dismiss="modal">Close</a>
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                </div>
+                <form action="@{{ delete_url }}" method="post">
+                    @csrf @method('DELETE')
+                    <div class="m-t-20"> <a href="#" class="btn btn-default" data-dismiss="modal">Close</a>
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
