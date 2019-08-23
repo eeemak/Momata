@@ -4,7 +4,9 @@
 						<div class="content_wrap">
 							<div class="contact_logo">
 								<div class="logo">
-									<a href="index.html"><img src="{{ asset('assets/website/images/logo-2.png') }}" class="logo_main" alt="" width="118" height="61"><img src="{{ asset('assets/website/images/logo-2.png') }}" class="logo_fixed" alt="" width="118" height="61"></a>
+									<a href="index.html">
+									<img src="{{ asset('assets/website/images/logo-2.jpg') }}" class="logo_main" alt="" style="width:72px;">
+									<img src="{{ asset('assets/website/images/logo-2.jpg') }}" class="logo_fixed" alt="" ></a>
 								</div>
 							</div>
 							<div class="contact_button">

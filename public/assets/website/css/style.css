@@ -2632,7 +2632,8 @@ body:not(.top_panel_fixed) .top_panel_position_over .top_panel_bottom {
 	overflow:hidden;
 }
 .top_panel_style_6.top_panel_wrap .logo {
-    margin: 1.4em 0 0 0.5em;
+    /* margin: 1.4em 0 0 0.5em; */
+    margin: 0.6em 0 0 0.5em;
 }
 .top_panel_style_3.top_panel_wrap .logo {
     margin: 1.6em 0 1em 0.8em;

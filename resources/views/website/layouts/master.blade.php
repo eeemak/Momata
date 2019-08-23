@@ -42,7 +42,7 @@
 				<div class="copyright_wrap_inner">
 					<div class="content_wrap">
 						<div class="copyright_text">
-							<p><a href="#">ThemeREX</a> © 2016 All Rights Reserved. <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a></p>
+							<p><a href="#">Momota</a> © 2019 All Rights Reserved.</p>
 						</div>
 					</div>
 				</div>
