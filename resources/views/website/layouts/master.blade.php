@@ -71,7 +71,7 @@
 	<script type="text/javascript" src="{{ asset('assets/website/js/vendor/plugins/revslider/public/assets/js/extensions/revolution.extension.slideanims.min.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('assets/website/js/vendor/plugins/revslider/public/assets/js/extensions/revolution.extension.layeranimation.min.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('assets/website/js/vendor/plugins/revslider/public/assets/js/extensions/revolution.extension.navigation.min.js') }}"></script>
-    {{-- Page Scripts --}
+    {{-- Page Scripts --}}
     @yield('script')
 </body>
 </html>
