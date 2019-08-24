@@ -55,7 +55,7 @@
                     @if($event->image_path)
                     <label>Image</label>
                     <div>
-                        <img src="{{ asset($event->image_path) }}" alt="image" style="height: 100px; width: 100px; border: 2px solid #ddd; margin: 2px 0;">
+                        <img src="{{ asset($event->image_path) }}" alt="image" style="height: auto; max-width: 100%; border: 2px solid #ddd; margin: 2px 0;">
                     </div>
                     @endif
                 </div>

@@ -6,16 +6,16 @@
                     <li class="{{ Request::is('dashboard') ? 'active' : null }}">
                         <a href="{{ route('dashboard') }}"><i class="fa fa-dashboard"></i> Dashboard </a>
                     </li>
-                    <li class="{{ Request::is('dashboard/mission') ? 'active' : null }}">
+                    <li class="{{ Request::is('dashboard/mission*') ? 'active' : null }}">
                         <a href="{{ route('mission.index') }}"><i class="fa fa-bullseye"></i> Missions</a>
                     </li>
-                    <li class="{{ Request::is('dashboard/project') ? 'active' : null }}">
+                    <li class="{{ Request::is('dashboard/project*') ? 'active' : null }}">
                         <a href="{{ route('project.index') }}"><i class="fa fa-tasks"></i> Our Projects</a>
                     </li>
-                    <li class="{{ Request::is('dashboard/news') ? 'active' : null }}">
+                    <li class="{{ Request::is('dashboard/news*') ? 'active' : null }}">
                         <a href="{{ route('news.index') }}"><i class="fa fa-newspaper-o"></i> News</a>
                     </li>
-                    <li class="{{ Request::is('dashboard/event') ? 'active' : null }}">
+                    <li class="{{ Request::is('dashboard/event*') ? 'active' : null }}">
                         <a href="{{ route('event.index') }}"><i class="fa fa-calendar"></i> Events</a>
                     </li>
                     @role('admin')

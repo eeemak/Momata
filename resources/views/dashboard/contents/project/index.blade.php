@@ -7,7 +7,7 @@
 <div class="content container-fluid">
     <div class="row">
         <div class="col-xs-4">
-            <h4 class="page-title">Projects</h4>
+            <h4 class="page-title">Our Projects</h4>
         </div>
         <div class="col-xs-8 text-right m-b-20">
             <a href="#" class="btn btn-primary rounded pull-right" data-toggle="modal" data-target="#create"><i class="fa fa-plus"></i> Create Project</a>
