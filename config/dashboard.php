@@ -31,7 +31,7 @@ return [
          'upload_file_location'=>'uploads/event/', //from public
          'upload_max_file_size'=>'500', //in KB
          'upload_accept_file_type'=>'png,jpg,jpeg,bmp',
-         'featured_max_item'=>'3',
+         'featured_max_item'=>'2',
          'use_datatable'=>true,
       ],
    ],

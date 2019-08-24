@@ -17,7 +17,7 @@ class Event extends Model
         'active',
     ];
     public static function featured_remain_count(){
-        $max_feature = config('dashboard.modules.mission.featured_max_item');
+        $max_feature = config('dashboard.modules.event.featured_max_item');
         $featured = self::where('featured', true)->count();
         return $max_feature - $featured;
     }
