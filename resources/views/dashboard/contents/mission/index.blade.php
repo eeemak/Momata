@@ -98,6 +98,13 @@
                         <textarea name="description" rows="5" cols="5" class="form-control summernote" placeholder="Enter your description here">{{ old('description') }}</textarea>
                         <small class="text-danger">{{ $errors->first('description') }}</small>
                     </div>
+                    <div class="form-group {{ $errors->has('date') ? ' has-error' : '' }}">
+                        <label>Date</label>
+                        <div class="cal-icon">
+                            <input name="date" class="form-control datetimepicker" type="text" value="{{ old('date') }}">
+                            <small class="text-danger">{{ $errors->first('date') }}</small>
+                        </div>
+                    </div>
                     <div class="form-group {{ $errors->has('image') ? ' has-error' : '' }}">
                         <label>Image</label>
                         <input name="image" class="form-control" type="file">

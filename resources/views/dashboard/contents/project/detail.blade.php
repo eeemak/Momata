@@ -26,6 +26,10 @@
                     <textarea name="description" rows="5" cols="5" class="form-control summernote" placeholder="Enter your description here" readonly>{{ $project->description }}</textarea>
                 </div>
                 <div class="form-group">
+                    <label>Date</label>
+                    <input name="date" class="form-control" type="text" value="{{ Carbon\Carbon::parse($project->date)->format('d/m/Y') }}" readonly>
+                </div>
+                <div class="form-group">
                     @if($project->image_path)
                     <label>Image</label>
                     <div>

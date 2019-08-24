@@ -6,6 +6,7 @@ use App\Models\Mission;
 use Helmesvs\Notify\Facades\Notify;
 use Illuminate\Http\Request;
 use Auth;
+use Carbon\Carbon;
 
 class MissionController extends Controller
 {
@@ -53,6 +54,7 @@ class MissionController extends Controller
             $image->move($destination, $image_path);
             $mission->image_path = $image_path;
         }
+        $mission->date = Carbon::createFromFormat('d/m/Y',$request->date);
         $mission->creator_user_id = Auth::id();
         $mission->save();
         Notify::success('New mission saved', 'Success');
@@ -108,6 +110,7 @@ class MissionController extends Controller
             $this->delete_file($mission->image_path);
             $mission->image_path = $image_path;
         }
+        $mission->date = Carbon::createFromFormat('d/m/Y',$request->date);
         $mission->updator_user_id = Auth::id();
         $mission->update();
         Notify::success('Mission updated', 'Success');

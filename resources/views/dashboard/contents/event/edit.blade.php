@@ -39,18 +39,20 @@
                         </div>
                         <div class="row">
                             <div class="col-sm-6">
-                                <div class="form-group">
+                                <div class="form-group {{ $errors->has('start_date') ? ' has-error' : '' }}">
                                     <label>Event Start Date</label>
                                     <div class="cal-icon">
                                         <input name="start_date" class="form-control datetimepicker" type="text" value="{{ Carbon\Carbon::parse($event->start_date)->format('d/m/Y') }}">
+                                        <small class="text-danger">{{ $errors->first('start_date') }}</small>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-6">
-                                <div class="form-group">
+                                <div class="form-group {{ $errors->has('end_date') ? ' has-error' : '' }}">
                                     <label>Event End Date</label>
                                     <div class="cal-icon">
                                         <input name="end_date" class="form-control datetimepicker" type="text" value="{{ Carbon\Carbon::parse($event->end_date)->format('d/m/Y') }}">
+                                        <small class="text-danger">{{ $errors->first('end_date') }}</small>
                                     </div>
                                 </div>
                             </div>

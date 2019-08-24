@@ -6,6 +6,7 @@ use App\Models\Project;
 use Helmesvs\Notify\Facades\Notify;
 use Illuminate\Http\Request;
 use Auth;
+use Carbon\Carbon;
 
 class ProjectController extends Controller
 {
@@ -53,6 +54,7 @@ class ProjectController extends Controller
             $image->move($destination, $image_path);
             $project->image_path = $image_path;
         }
+        $project->date = Carbon::createFromFormat('d/m/Y',$request->date);
         $project->creator_user_id = Auth::id();
         $project->save();
         Notify::success('New project saved', 'Success');
@@ -108,6 +110,7 @@ class ProjectController extends Controller
             $this->delete_file($project->image_path);
             $project->image_path = $image_path;
         }
+        $project->date = Carbon::createFromFormat('d/m/Y',$request->date);
         $project->updator_user_id = Auth::id();
         $project->update();
         Notify::success('Project updated', 'Success');

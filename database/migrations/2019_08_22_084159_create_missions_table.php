@@ -18,6 +18,7 @@ class CreateMissionsTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('image_path')->nullable();
+            $table->date('date')->nullable();
             $table->boolean('featured')->default(false);
             $table->boolean('active')->default(true);
             $table->bigInteger('creator_user_id')->unsigned()->nullable();
