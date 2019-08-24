@@ -1,12 +1,39 @@
-@extends('website.layouts.master')
-@section('style')  
-<link property="stylesheet" rel='stylesheet' id='tribe-events-full-calendar-style-css' href="{{asset('assets/website/js/vendor/plugins/the-events-calendar/src/resources/css/tribe-events-full.min.css') }}" type='text/css' media='all' />
-	<link property="stylesheet" rel='stylesheet' id='tribe-events-calendar-style-css' href="{{asset('assets/website/js/vendor/plugins/the-events-calendar/src/resources/css/tribe-events-theme.min.css') }}" type='text/css' media='all' />
-	<link property="stylesheet" rel='stylesheet' id='tribe-events-calendar-full-mobile-style-css' href="{{asset('assets/website/js/vendor/plugins/the-events-calendar/src/resources/css/tribe-events-full-mobile.min.css') }}" type='text/css' media='only screen and (max-width: 768px)'/>
-	<link property="stylesheet" rel='stylesheet' id='tribe-events-calendar-mobile-style-css' href="{{asset('assets/website/js/vendor/plugins/the-events-calendar/src/resources/css/tribe-events-theme-mobile.min.css') }}" type='text/css' media='only screen and (max-width: 768px)'/>
-@endsection
-@section('content')
-<div class="top_panel_title top_panel_style_1  title_present scheme_original">
+<!DOCTYPE html>
+<html lang="en-US" class="scheme_original">
+<head>
+	<title>Event Detail</title>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="format-detection" content="telephone=no"><link rel='shortcut icon' href='favicon.ico' type='image/x-icon' />
+	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+	<link rel='dns-prefetch' href='http://s.w.org/' />
+	<link property="stylesheet" rel='stylesheet' id='charity_is_hope-font-WCManoNegraBta-style-css' href="{{ asset('assets/website/css/font-face/WCManoNegraBta/stylesheet.css') }}" type='text/css' media='all' />
+	<link property="stylesheet" rel='stylesheet' id='charity_is_hope-fontello-style-css' href="{{ asset('assets/website/css/fontello/css/fontello.css') }}" type='text/css' media='all' />
+	<link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700%7COpen+Sans:300,300i,400,400i,600,600i,700,700i,800,800i%7CRaleway:100,200,300,400,500,600,700,800,900&amp;subset=latin-ext" rel="stylesheet">
+
+	<link property="stylesheet" rel='stylesheet' id='tribe-events-full-calendar-style-css' href="{{ asset('assets/website/js/vendor/plugins/the-events-calendar/src/resources/css/tribe-events-full.min.css') }}" type='text/css' media='all' />
+	<link property="stylesheet" rel='stylesheet' id='tribe-events-calendar-style-css' href="{{ asset('assets/website/js/vendor/plugins/the-events-calendar/src/resources/css/tribe-events-theme.min.css') }}" type='text/css' media='all' />
+	<link property="stylesheet" rel='stylesheet' id='tribe-events-calendar-full-mobile-style-css' href="{{ asset('assets/website/js/vendor/plugins/the-events-calendar/src/resources/css/tribe-events-full-mobile.min.css') }}" type='text/css' media='only screen and (max-width: 768px)'
+	/>
+	<link property="stylesheet" rel='stylesheet' id='tribe-events-calendar-mobile-style-css' href="{{ asset('assets/website/js/vendor/plugins/the-events-calendar/src/resources/css/tribe-events-theme-mobile.min.css') }}" type='text/css' media='only screen and (max-width: 768px)'
+	/>
+	<link property="stylesheet" rel='stylesheet' id='charity_is_hope-swiperslider-style-css' href="{{ asset('assets/website/js/vendor/fw/js/swiper/swiper.css') }}" type='text/css' media='all' />
+	<link property="stylesheet" rel='stylesheet' id='charity_is_hope-main-style-css' href="{{ asset('assets/website/css/style.css') }}" type='text/css' media='all' />
+	<link property="stylesheet" rel='stylesheet' id='charity_is_hope-main-style-inline-css' href="{{ asset('assets/website/css/global.css') }}" type='text/css' media='all' />
+	<link property="stylesheet" rel='stylesheet' id='charity_is_hope-animation-style-css' href="{{ asset('assets/website/js/vendor/fw/css/core.animation.css') }}" type='text/css' media='all' />
+	<link property="stylesheet" rel='stylesheet' id='charity_is_hope-shortcodes-style-css' href="{{ asset('assets/website/js/vendor/shortcodes/theme.shortcodes.css') }}" type='text/css' media='all' />
+	<link property="stylesheet" rel='stylesheet' id='charity_is_hope-plugin.tribe-events-style-css' href="{{ asset('assets/website/css/plugin.tribe-events.css') }}" type='text/css' media='all' />
+	<link property="stylesheet" rel='stylesheet' id='charity_is_hope-responsive-style-css' href="{{ asset('assets/website/css/responsive.css') }}" type='text/css' media='all' />
+</head>
+
+<body class="single single-tribe_events postid-436 tribe-filter-live body_style_wide top_style_header_1 body_filled article_style_stretch layout_single-standard template_single-standard scheme_original top_panel_show top_panel_above sidebar_hide sidebar_outer_hide events-single tribe-events-style-full tribe-events-style-theme tribe-theme-charity-is-hope page-template-page-php singular">
+	<a id="toc_home" class="sc_anchor" title="Home" data-description="&lt;i&gt;Return to Home&lt;/i&gt; - &lt;br&gt;navigate to home page of the site" data-icon="icon-home" data-url="http://charity-is-hope.themerex.net/" data-separator="yes"></a>
+	<a id="toc_top" class="sc_anchor" title="To Top" data-description="&lt;i&gt;Back to top&lt;/i&gt; - &lt;br&gt;scroll to top of the page" data-icon="icon-double-up" data-url="" data-separator="yes"></a>
+	<div class="body_wrap">
+		<div class="page_wrap">
+			<div class="top_panel_fixed_wrap"></div>
+			@include('website.layouts.header')
+			<div class="top_panel_title top_panel_style_1  title_present scheme_original">
 				<div class="top_panel_title_inner top_panel_inner_style_1  title_present_inner">
 					<div class="content_wrap">
 						<h1 class="page_title">Is a Nonprofit Internship the Best Choice for You?</h1> </div>
@@ -41,7 +68,7 @@
 										<!-- #tribe-events-header -->
 										<div id="post-436" class="post-436 tribe_events type-tribe_events status-publish has-post-thumbnail hentry tag-charity tag-children tag-safety">
 											<!-- Event featured image, but exclude link -->
-											<div class="tribe-events-event-image"><img width="2340" height="1560" src="images/image-6.jpg" class="attachment-full size-full" alt="image-6" srcset="images/image-6.jpg 2340w, images/image-6-300x200.jpg 300w, images/image-6-768x512.jpg 768w, images/image-6-1024x683.jpg 1024w"
+											<div class="tribe-events-event-image"><img width="2340" height="1560" src="{{ asset('assets/website/images/image-6.jpg') }}" class="attachment-full size-full" alt="image-6" srcset="{{ asset('assets/website/images/image-6.jpg') }} 2340w, {{ asset('assets/website/images/image-6-300x200.jpg') }} 300w, {{ asset('assets/website/images/image-6-768x512.jpg') }} 768w, {{ asset('assets/website/images/image-6-1024x683.jpg') }} 1024w"
 																sizes="(max-width: 2340px) 100vw, 2340px" /></div>
 											<!-- Event content -->
 											<div class="tribe-events-single-event-description tribe-events-content">
@@ -143,8 +170,43 @@
 				<!-- </div> class="content_wrap"> -->
 			</div>
 			<!-- </.page_content_wrap> -->
-@endsection
-@section('script')
-<script type='text/javascript' src="{{ asset('assets/website/js/vendor/plugins/the-events-calendar/src/resources/js/embedded-map.min.js') }}"></script>
-<script type='text/javascript' src="{{ asset('assets/website/js/vendor/plugins/the-events-calendar/src/resources/js/tribe-events.min.js') }}"></script>
-@endsection
+
+			@include('website.layouts.footer')
+			<!-- /.footer_wrap -->
+
+			<div class="copyright_wrap copyright_style_text  scheme_original">
+				<div class="copyright_wrap_inner">
+					<div class="content_wrap">
+						<div class="copyright_text">
+							<p><a href="#">ThemeREX</a> © 2019 All Rights Reserved. <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!-- /.page_wrap -->
+
+	</div>
+	<!-- /.body_wrap -->
+
+	<a href="#" class="scroll_to_top icon-up" title="Scroll to top"></a>
+	<div class="custom_html_section"></div>
+	<script type='text/javascript' src="{{ asset('assets/website/js/vendor/jquery.js') }}"></script>
+	<script type='text/javascript' src="{{ asset('assets/website/js/vendor/jquery-migrate.min.js') }}"></script>
+	<script type='text/javascript' src="{{ asset('assets/website/js/vendor/plugins/the-events-calendar/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}"></script>
+	<script type='text/javascript' src="{{ asset('assets/website/js/vendor/plugins/the-events-calendar/vendor/jquery-placeholder/jquery.placeholder.min.js') }}"></script>
+	<script type='text/javascript' src="{{ asset('assets/website/js/vendor/fw/js/superfish.js') }}"></script>
+	<script type='text/javascript' src="{{ asset('assets/website/js/vendor/fw/js/core.reviews.js') }}"></script>
+	<script type='text/javascript' src="{{ asset('assets/website/js/vendor/fw/js/core.utils.js') }}"></script>
+	<script type='text/javascript' src="{{ asset('assets/website/js/vendor/fw/js/core.init.js') }}"></script>
+	<script type='text/javascript' src="{{ asset('assets/website/js/custom/theme.init.js') }}"></script>
+	<script type='text/javascript' src="{{ asset('assets/website/js/vendor/shortcodes/theme.shortcodes.js') }}"></script>
+
+	<script type='text/javascript' src="{{ asset('assets/website/js/vendor/plugins/the-events-calendar/src/resources/js/embedded-map.min.js') }}"></script>
+	<script type='text/javascript' src="{{ asset('assets/website/js/vendor/fw/js/swiper/swiper.js') }}"></script>
+	<script type='text/javascript' src="{{ asset('assets/website/js/custom/global.js') }}"></script>
+	<script type='text/javascript' src="{{ asset('assets/website/js/vendor/plugins/the-events-calendar/vendor/jquery-resize/jquery.ba-resize.min.js') }}"></script>
+	<script type='text/javascript' src="{{ asset('assets/website/js/vendor/plugins/the-events-calendar/src/resources/js/tribe-events.min.js') }}"></script>
+</body>
+</html>
