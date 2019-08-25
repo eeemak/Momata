@@ -14,6 +14,9 @@ class Mission extends Model
         'featured',
         'active',
     ];
+    protected $dates = [
+        'date',
+    ];
     public static function featured_remain_count(){
         $max_feature = config('dashboard.modules.mission.featured_max_item');
         $featured = self::where('featured', true)->count();

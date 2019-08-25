@@ -4,6 +4,7 @@ return [
 
    'title'=> 'Momata',
    'view_root'=> 'dashboard.contents.',
+   'input_date_format'=> 'd/m/Y', // Use same date format in frontend datetimepicker
 
    'modules'=> [
       'mission'=>[

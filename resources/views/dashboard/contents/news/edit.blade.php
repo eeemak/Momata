@@ -30,9 +30,9 @@
                         <div class="form-group {{ $errors->has('date') ? ' has-error' : '' }}">
                             <label>Date</label>
                             <div class="cal-icon">
-                                <input name="date" class="form-control datetimepicker" type="text" value="{{ Carbon\Carbon::parse($news->date)->format('d/m/Y') }}">
-                                <small class="text-danger">{{ $errors->first('date') }}</small>
+                                <input name="date" class="form-control datetimepicker" type="text" value="{{ optional($news->date)->format(config('dashboard.input_date_format')) }}">
                             </div>
+                            <small class="text-danger">{{ $errors->first('date') }}</small>
                         </div>
                         <div class="form-group {{ $errors->has('image') ? ' has-error' : '' }}">
                             @if($news->image_path)
@@ -52,7 +52,7 @@
                                     <div class="col-md-9">
                                         <label class="radio-inline">
                                             @php
-                                                $featured_remain_count = \App\Models\News::featured_remain_count() + $news->featured;
+                                                $featured_remain_count = $news->featured_remain_count() + $news->featured;
                                             @endphp
                                             <input type="radio" name="featured" {{ $news->featured ? 'checked' : null }} value="1" @if ($featured_remain_count <= 0) disabled @endif> Featured
                                             @if ($featured_remain_count <= 0) 

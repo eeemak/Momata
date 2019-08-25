@@ -44,6 +44,8 @@ class EventController extends Controller
             'title' => 'required|max:100',
             'description' => 'required',
             'vanue' => 'max:120',
+            'start_date' => 'nullable|date_format:'.config('dashboard.input_date_format'),
+            'end_date' => 'nullable|after_or_equal:start_date|date_format:'.config('dashboard.input_date_format'),
             'image' => 'file|mimes:'.config('dashboard.modules.event.upload_accept_file_type').'|max:'.config('dashboard.modules.event.upload_max_file_size'),
         ]);
         $event = new Event();
@@ -55,8 +57,8 @@ class EventController extends Controller
             $image->move($destination, $image_path);
             $event->image_path = $image_path;
         }
-        $event->start_date = Carbon::createFromFormat('d/m/Y',$request->start_date);
-        $event->end_date = Carbon::createFromFormat('d/m/Y',$request->end_date);
+        $event->start_date = $request->start_date ? Carbon::createFromFormat(config('dashboard.input_date_format'),$request->start_date) : null;
+        $event->end_date = $request->end_date ? Carbon::createFromFormat(config('dashboard.input_date_format'),$request->end_date) : null;
         $event->creator_user_id = Auth::id();
         $event->save();
         Notify::success('New event saved', 'Success');
@@ -102,6 +104,8 @@ class EventController extends Controller
             'title' => 'required|max:100',
             'description' => 'required',
             'vanue' => 'max:120',
+            'start_date' => 'nullable|date_format:'.config('dashboard.input_date_format'),
+            'end_date' => 'nullable|after_or_equal:start_date|date_format:'.config('dashboard.input_date_format'),
             'image' => 'file|mimes:'.config('dashboard.modules.event.upload_accept_file_type').'|max:'.config('dashboard.modules.event.upload_max_file_size'),
         ]);
         $event->fill($request->input());
@@ -113,8 +117,8 @@ class EventController extends Controller
             $this->delete_file($event->image_path);
             $event->image_path = $image_path;
         }
-        $event->start_date = Carbon::createFromFormat('d/m/Y',$request->start_date);
-        $event->end_date = Carbon::createFromFormat('d/m/Y',$request->end_date);
+        $event->start_date = $request->start_date ? Carbon::createFromFormat(config('dashboard.input_date_format'),$request->start_date) : null;
+        $event->end_date = $request->end_date ? Carbon::createFromFormat(config('dashboard.input_date_format'),$request->end_date) : null;
         $event->updator_user_id = Auth::id();
         $event->update();
         Notify::success('Event updated', 'Success');

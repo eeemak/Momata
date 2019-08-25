@@ -27,7 +27,7 @@
                 </div>
                 <div class="form-group">
                     <label>Date</label>
-                    <input name="date" class="form-control" type="text" value="{{ Carbon\Carbon::parse($news->date)->format('d/m/Y') }}" readonly>
+                    <input name="date" class="form-control" type="text" value="{{ optional($news->date)->format(config('dashboard.input_date_format')) }}" readonly>
                 </div>
                 <div class="form-group">
                     @if($news->image_path)

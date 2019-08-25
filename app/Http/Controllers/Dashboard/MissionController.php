@@ -43,6 +43,7 @@ class MissionController extends Controller
         $this->validate($request, [
             'title' => 'required|max:100',
             'description' => 'required',
+            'date' => 'nullable|date_format:'.config('dashboard.input_date_format'),
             'image' => 'file|mimes:'.config('dashboard.modules.mission.upload_accept_file_type').'|max:'.config('dashboard.modules.mission.upload_max_file_size'),
         ]);
         $mission = new Mission();
@@ -54,7 +55,7 @@ class MissionController extends Controller
             $image->move($destination, $image_path);
             $mission->image_path = $image_path;
         }
-        $mission->date = Carbon::createFromFormat('d/m/Y',$request->date);
+        $mission->date = $request->date ? Carbon::createFromFormat(config('dashboard.input_date_format'),$request->date) : null;
         $mission->creator_user_id = Auth::id();
         $mission->save();
         Notify::success('New mission saved', 'Success');
@@ -99,6 +100,7 @@ class MissionController extends Controller
         $this->validate($request, [
             'title' => 'required|max:100',
             'description' => 'required',
+            'date' => 'nullable|date_format:'.config('dashboard.input_date_format'),
             'image' => 'file|mimes:'.config('dashboard.modules.mission.upload_accept_file_type').'|max:'.config('dashboard.modules.mission.upload_max_file_size'),
         ]);
         $mission->fill($request->input());
@@ -110,7 +112,7 @@ class MissionController extends Controller
             $this->delete_file($mission->image_path);
             $mission->image_path = $image_path;
         }
-        $mission->date = Carbon::createFromFormat('d/m/Y',$request->date);
+        $mission->date = $request->date ? Carbon::createFromFormat(config('dashboard.input_date_format'),$request->date) : null;
         $mission->updator_user_id = Auth::id();
         $mission->update();
         Notify::success('Mission updated', 'Success');

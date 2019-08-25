@@ -38,7 +38,7 @@
                         <div class="form-group">
                             <label>Event Start Date</label>
                             <div class="cal-icon">
-                                <input name="start_date" class="form-control" type="text" value="{{ Carbon\Carbon::parse($event->start_date)->format('d/m/Y') }}" readonly>
+                                <input name="start_date" class="form-control" type="text" value="{{ optional($event->start_date)->format(config('dashboard.input_date_format')) }}" readonly>
                             </div>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                         <div class="form-group">
                             <label>Event End Date</label>
                             <div class="cal-icon">
-                                <input name="end_date" class="form-control" type="text" value="{{ Carbon\Carbon::parse($event->end_date)->format('d/m/Y') }}" readonly>
+                                <input name="end_date" class="form-control" type="text" value="{{ optional($event->end_date)->format(config('dashboard.input_date_format')) }}" readonly>
                             </div>
                         </div>
                     </div>

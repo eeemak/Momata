@@ -114,8 +114,8 @@
                                 <label>Event Start Date</label>
                                 <div class="cal-icon">
                                     <input name="start_date" class="form-control datetimepicker" type="text">
-                                    <small class="text-danger">{{ $errors->first('start_date') }}</small>
                                 </div>
+                                <small class="text-danger">{{ $errors->first('start_date') }}</small>
                             </div>
                         </div>
                         <div class="col-sm-6">
@@ -123,8 +123,8 @@
                                 <label>Event End Date</label>
                                 <div class="cal-icon">
                                     <input name="end_date" class="form-control datetimepicker" type="text">
-                                    <small class="text-danger">{{ $errors->first('end_date') }}</small>
                                 </div>
+                                <small class="text-danger">{{ $errors->first('end_date') }}</small>
                             </div>
                         </div>
                     </div>

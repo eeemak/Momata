@@ -43,6 +43,7 @@ class NewsController extends Controller
         $this->validate($request, [
             'title' => 'required|max:100',
             'description' => 'required',
+            'date' => 'nullable|date_format:'.config('dashboard.input_date_format'),
             'image' => 'file|mimes:'.config('dashboard.modules.news.upload_accept_file_type').'|max:'.config('dashboard.modules.news.upload_max_file_size'),
         ]);
         $news = new News();
@@ -54,7 +55,7 @@ class NewsController extends Controller
             $image->move($destination, $image_path);
             $news->image_path = $image_path;
         }
-        $news->date = Carbon::createFromFormat('d/m/Y',$request->date);
+        $news->date = $request->date ? Carbon::createFromFormat(config('dashboard.input_date_format'),$request->date) : null;
         $news->creator_user_id = Auth::id();
         $news->save();
         Notify::success('New news saved', 'Success');
@@ -99,6 +100,7 @@ class NewsController extends Controller
         $this->validate($request, [
             'title' => 'required|max:100',
             'description' => 'required',
+            'date' => 'nullable|date_format:'.config('dashboard.input_date_format'),
             'image' => 'file|mimes:'.config('dashboard.modules.news.upload_accept_file_type').'|max:'.config('dashboard.modules.news.upload_max_file_size'),
         ]);
         $news->fill($request->input());
@@ -110,7 +112,7 @@ class NewsController extends Controller
             $this->delete_file($news->image_path);
             $news->image_path = $image_path;
         }
-        $news->date = Carbon::createFromFormat('d/m/Y',$request->date);
+        $news->date = $request->date ? Carbon::createFromFormat(config('dashboard.input_date_format'),$request->date) : null;
         $news->updator_user_id = Auth::id();
         $news->update();
         Notify::success('News updated', 'Success');

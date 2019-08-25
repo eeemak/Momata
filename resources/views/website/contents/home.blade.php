@@ -220,7 +220,7 @@
 															</div>
 														</div>
 														<div class="sc_events_item_content">
-															<p class="sc_events_item_date">{{ $item->start_date ? Carbon\Carbon::parse($item->start_date)->format('F d, Y') : 'Unknown date' }}</p>
+															<p class="sc_events_item_date">{{ optional($item->start_date)->format('F d, Y') ?? 'Unknown Date' }}</p>
 															<h5 class="sc_events_item_title"><a href="event.html">{{ $item->title }}</a></h5>
 															<div class="sc_events_item_description">
 																<p>{{ str_limit($item->description, 100) }}</p>

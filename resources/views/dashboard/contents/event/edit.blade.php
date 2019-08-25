@@ -42,18 +42,18 @@
                                 <div class="form-group {{ $errors->has('start_date') ? ' has-error' : '' }}">
                                     <label>Event Start Date</label>
                                     <div class="cal-icon">
-                                        <input name="start_date" class="form-control datetimepicker" type="text" value="{{ Carbon\Carbon::parse($event->start_date)->format('d/m/Y') }}">
-                                        <small class="text-danger">{{ $errors->first('start_date') }}</small>
+                                        <input name="start_date" class="form-control datetimepicker" type="text" value="{{ optional($event->start_date)->format(config('dashboard.input_date_format')) }}">
                                     </div>
+                                    <small class="text-danger">{{ $errors->first('start_date') }}</small>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group {{ $errors->has('end_date') ? ' has-error' : '' }}">
                                     <label>Event End Date</label>
                                     <div class="cal-icon">
-                                        <input name="end_date" class="form-control datetimepicker" type="text" value="{{ Carbon\Carbon::parse($event->end_date)->format('d/m/Y') }}">
-                                        <small class="text-danger">{{ $errors->first('end_date') }}</small>
+                                        <input name="end_date" class="form-control datetimepicker" type="text" value="{{ optional($event->end_date)->format(config('dashboard.input_date_format')) }}">
                                     </div>
+                                    <small class="text-danger">{{ $errors->first('end_date') }}</small>
                                 </div>
                             </div>
                         </div>
@@ -75,7 +75,7 @@
                                     <div class="col-md-9">
                                         <label class="radio-inline">
                                             @php
-                                                $featured_remain_count = \App\Models\Event::featured_remain_count() + $event->featured;
+                                                $featured_remain_count = $event->featured_remain_count() + $event->featured;
                                             @endphp
                                             <input type="radio" name="featured" {{ $event->featured ? 'checked' : null }} value="1" @if ($featured_remain_count <= 0) disabled @endif> Featured
                                             @if ($featured_remain_count <= 0) 

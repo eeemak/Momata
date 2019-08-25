@@ -16,6 +16,10 @@ class Event extends Model
         'featured',
         'active',
     ];
+    protected $dates = [
+        'start_date',
+        'end_date',
+    ];
     public static function featured_remain_count(){
         $max_feature = config('dashboard.modules.event.featured_max_item');
         $featured = self::where('featured', true)->count();

@@ -102,8 +102,8 @@
                         <label>Date</label>
                         <div class="cal-icon">
                             <input name="date" class="form-control datetimepicker" type="text" value="{{ old('date') }}">
-                            <small class="text-danger">{{ $errors->first('date') }}</small>
                         </div>
+                        <small class="text-danger">{{ $errors->first('date') }}</small>
                     </div>
                     <div class="form-group {{ $errors->has('image') ? ' has-error' : '' }}">
                         <label>Image</label>
