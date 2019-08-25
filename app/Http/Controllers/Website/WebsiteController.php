@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use App\Models\Mission;
+use App\Models\News;
 use App\Models\Project;
 use Illuminate\Http\Request;
 
@@ -17,13 +18,19 @@ class WebsiteController extends Controller
         return $view;
     }
     public function projects(){
-        return view($this->getPage('projects'));
+        $view = view($this->getPage('projects'));
+        $view->with('project_list', Project::where('active', true)->orderBy('id', 'desc')->paginate(9));
+        return $view;
     }
     public function news(){
-        return view($this->getPage('news'));
+        $view = view($this->getPage('news'));
+        $view->with('news_list', News::where('active', true)->orderBy('id', 'desc')->paginate(5));
+        return $view;
     }
     public function events(){
-        return view($this->getPage('events'));
+        $view = view($this->getPage('events'));
+        $view->with('event_list', Event::where('active', true)->orderBy('id', 'desc')->paginate(5));
+        return $view;
     }
     public function event_detail(){
         return view($this->getPage('event_detail'));
