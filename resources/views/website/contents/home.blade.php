@@ -1,5 +1,5 @@
 @extends('website.layouts.master')
-@section('style')  
+@section('style')
 @endsection
 @section('content')
 {{-- Slider --}}
@@ -24,11 +24,11 @@
 													<div id="sc_services_1443866382_1" class="sc_services_item sc_services_item_1 odd first">
 														<div class="sc_services_item_featured post_featured">
 															<div class="post_thumb" data-image="" data-title="Promoting the right and wellbeing of every child, in everything we do.">
-																<a class="hover_icon hover_icon_link" href="#"><img width="136" height="136" alt="mission_1.png'" src="{{ asset($item->image_path ?? 'images/no-image.png') }}"></a>
+																<a class="hover_icon hover_icon_link" href="{{ route('mission_detail', $item) }}"><img width="136" height="136" alt="mission_1.png'" src="{{ asset($item->image_path ?? 'images/no-image.png') }}"></a>
 															</div>
 														</div>
 														<div class="sc_services_item_content">
-															<h4 class="sc_services_item_title"><a href="#">{{ str_limit($item->description, 100) }}</a></h4>
+															<h4 class="sc_services_item_title"><a href="{{ route('mission_detail', $item) }}">{{ str_limit($item->description, 100) }}</a></h4>
 															<div class="sc_services_item_description">
 															</div>
 														</div>
@@ -47,7 +47,7 @@
 						</div>
 					</div>
 				@endif
-				
+
 				@if ($project_list->count() > 0)
 					<div class="block">
 						<div class="column_container">
@@ -66,7 +66,7 @@
 												<!-- .post_featured -->
 												<div class="post_body">
 													<div class="post_header entry-header">
-														<h4 class="entry-title"><a href="single-cause.html" rel="bookmark">{{ $item->title }}</a></h4>
+														<h4 class="entry-title"><a href="{{ route('project_detail', $item) }}" rel="bookmark">{{ $item->title }}</a></h4>
 													</div>
 													<!-- .entry-header -->
 													<div class="post_content entry-content">
@@ -84,7 +84,7 @@
 																<span class="post_counters_number_goal">9000.00 USD</span>
 															</div>
 														</div>
-														<a class="more-link" href="single-cause.html">Donate</a> </div>
+														<a class="more-link" href="{{ route('project_detail', $item) }}">Donate</a> </div>
 													<!-- .entry-content -->
 												</div>
 												<!-- .post_body -->
@@ -99,7 +99,7 @@
 						</div>
 					</div>
 				@endif
-				
+
 					<div class="wrap">
 						<div class="column_container">
 							<div class="column-inner">
@@ -216,15 +216,15 @@
 													<div id="sc_events_1937176018_1" class="sc_events_item sc_events_item_1 odd first">
 														<div class="sc_events_item_featured post_featured">
 															<div class="post_thumb" data-image="{{ asset($item->image_path ?? 'images/no-image.png') }}" data-title="Is a Nonprofit Internship the Best Choice for You?">
-																<a class="hover_icon hover_icon_link" href="{{ route('event_detail') }}"><img width="770" height="434" style="width: 770px; height: 300px" alt="Is a Nonprofit Internship the Best Choice for You?" src="{{ asset($item->image_path ?? 'images/no-image.png') }}"></a>
+																<a class="hover_icon hover_icon_link" href="{{ route('event_detail', $item) }}"><img width="770" height="434" style="width: 770px; height: 300px" alt="Is a Nonprofit Internship the Best Choice for You?" src="{{ asset($item->image_path ?? 'images/no-image.png') }}"></a>
 															</div>
 														</div>
 														<div class="sc_events_item_content">
 															<p class="sc_events_item_date">{{ optional($item->start_date)->format('F d, Y') ?? 'Unknown Date' }}</p>
-															<h5 class="sc_events_item_title"><a href="event.html">{{ $item->title }}</a></h5>
+															<h5 class="sc_events_item_title"><a href="{{ route('event_detail', $item) }}">{{ $item->title }}</a></h5>
 															<div class="sc_events_item_description">
 																<p>{{ str_limit($item->description, 100) }}</p>
-																<a href="{{ route('event_detail') }}" class="sc_events_item_readmore">Read more</a>																			</div>
+																<a href="{{ route('event_detail', $item) }}" class="sc_events_item_readmore">Read more</a>																			</div>
 														</div>
 													</div>
 												</div>

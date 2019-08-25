@@ -17,9 +17,19 @@ class WebsiteController extends Controller
         $view->with('event_list', Event::where('active', true)->where('featured', true)->orderBy('id', 'desc')->get());
         return $view;
     }
+    public function mission_detail(Event $mission){
+        $view = view($this->getPage('mission_detail'));
+        $view->with('mission', $mission);
+        return $view;
+    }
     public function projects(){
         $view = view($this->getPage('projects'));
         $view->with('project_list', Project::where('active', true)->orderBy('id', 'desc')->paginate(9));
+        return $view;
+    }
+    public function project_detail(Event $project){
+        $view = view($this->getPage('project_detail'));
+        $view->with('project', $project);
         return $view;
     }
     public function news(){
@@ -27,13 +37,20 @@ class WebsiteController extends Controller
         $view->with('news_list', News::where('active', true)->orderBy('id', 'desc')->paginate(5));
         return $view;
     }
+    public function news_detail(Event $news){
+        $view = view($this->getPage('news_detail'));
+        $view->with('news', $news);
+        return $view;
+    }
     public function events(){
         $view = view($this->getPage('events'));
         $view->with('event_list', Event::where('active', true)->orderBy('id', 'desc')->paginate(5));
         return $view;
     }
-    public function event_detail(){
-        return view($this->getPage('event_detail'));
+    public function event_detail(Event $event){
+        $view = view($this->getPage('event_detail'));
+        $view->with('event', $event);
+        return $view;
     }
     public function about_us(){
         return view($this->getPage('about_us'));

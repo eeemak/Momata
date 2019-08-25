@@ -26,7 +26,7 @@
                                                 <div class="post_featured"><img width="570" height="320" style="height:180px;" src="{{ asset($item->image_path ?? 'images/no-image.png') }}" class="attachment-thumb_med size-thumb_med" alt="Education to Every Child" /> </div>
                                                 <!-- .post_featured -->
                                                 <div class="post_body">
-                                                    <div class="post_header entry-header"><h4 class="entry-title"><a href="single-cause.html" rel="bookmark">{{ $item->title }}</a></h4> </div>
+                                                    <div class="post_header entry-header"><h4 class="entry-title"><a href="{{ route('project_detail', $item) }}" rel="bookmark">{{ $item->title }}</a></h4> </div>
                                                     <!-- .entry-header -->
                                                     <div class="post_content entry-content">
                                                         <p>{{ str_limit($item->description) }}</p>
@@ -41,7 +41,7 @@
                                                                 <span class="post_counters_number_goal">9000.00 USD</span>
                                                             </div>
                                                         </div>
-                                                        <a class="more-link" href="single-cause.html">Donate</a> </div>
+                                                        <a class="more-link" href="{{ route('project_detail', $item) }}">Donate</a> </div>
                                                     <!-- .entry-content -->
                                                 </div>
                                                 <!-- .post_body -->
