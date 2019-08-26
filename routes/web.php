@@ -5,6 +5,7 @@
 Route::get('/', ['as'=>'home', 'uses'=>'WebsiteController@home']);
 Route::get('/missions/{mission}/mission_detail', ['as'=>'mission_detail', 'uses'=>'WebsiteController@mission_detail']);
 Route::get('/projects', ['as'=>'projects', 'uses'=>'WebsiteController@projects']);
+Route::get('/missions', ['as'=>'missions', 'uses'=>'WebsiteController@missions']);
 Route::get('/projects/{project}/project_detail', ['as'=>'project_detail', 'uses'=>'WebsiteController@project_detail']);
 Route::get('/news', ['as'=>'news', 'uses'=>'WebsiteController@news']);
 Route::get('/news/{news}/news_detail', ['as'=>'news_detail', 'uses'=>'WebsiteController@news_detail']);

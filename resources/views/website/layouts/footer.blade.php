@@ -6,11 +6,13 @@
                         <div class="contacts_wrap">
                             <div class="contacts_wrap_inner">
                                 <div class="logo">
-                                    <a href="index.html"><img src="{{ asset('assets/website/images/logo-2.jpg') }}" class="logo_footer" alt="" width="237" height="121"></a>
+                                    <a href="index.html"><img src="{{ asset('assets/website/images/logo-2.png') }}" class="logo_footer" alt="" width="237" height="121"></a>
                                 </div>
                                 <div class="contacts_address">
-                                    <p>Nulla fringilla orci mauris, nec tempor lectus consequat ac. Nulla consectetur magna in velit pellentesque egestas sed eget nibh. Fusce nec viverra dolor. Phasellus faucibus egestas nulla, vel suscipit metus maximus id. Phasellus blandit porttitor
-                                        placerat. <br /><br />Donec malesuada ultricies ante at congue. Integer nec faucibus quam. Phasellus posuere nisi ac.<br /><br /><span>hope@companyname.com</span></p>
+                                    <h3>
+                                    MOMOTA
+                                    </h3>
+<p>A regional non-government Organization</p>
                                 </div>
                             </div>
                             <!-- /.contacts_wrap_inner -->
@@ -64,23 +66,11 @@
                                     <!-- /.sc_clients_wrap -->
                                 </div>
                             </aside>
-                            <aside id="text-3" class="widget_number_2 widget widget_text">
-                                <h5 class="widget_title">newslettter sign-up</h5>
-                                <div class="textwidget">
-                                    <form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-532" method="post" data-id="532" data-name="form">
-                                        <div class="mc4wp-form-fields"><input type="email" name="EMAIL" placeholder="Email" required /><input type="submit" value="Subcribe" />
-                                            <div class="hidden"><input type="text" name="_mc4wp_honeypot" value="" tabindex="-1" autocomplete="off" /></div>
-                                            <input type="hidden" name="_mc4wp_timestamp" value="1481283227" />
-                                            <input type="hidden" name="_mc4wp_form_id" value="532" />
-                                            <input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1" />
-                                        </div>
-                                        <div class="mc4wp-response"></div>
-                                    </form>
-                                    <!-- / MailChimp for WordPress Plugin -->
-                                </div>
-                            </aside>
                             <aside id="charity_is_hope_widget_socials-3" class="widget_number_3 widget widget_socials">
                                 <h5 class="widget_title">Connect With Us</h5>
+                                <strong>Address:</strong> 3,G,A Bhaban (Unit-1) 4th Floor, Anderkinna, Chittagong<br>
+                                <strong>Call:</strong> 01919-886606<br>
+                                <strong>Email:</strong> momota.ngo@yahooo.com<br>
                                 <div class="widget_inner">
                                     <div class="sc_socials sc_socials_type_icons sc_socials_shape_square sc_socials_size_small">
                                         <div class="sc_socials_item"><a href="#" target="_blank" class="social_icons social_twitter"><span class="icon-twitter"></span></a></div>

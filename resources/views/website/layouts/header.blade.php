@@ -4,13 +4,13 @@
 						<div class="content_wrap">
 							<div class="contact_logo">
 								<div class="logo">
-									<a href="index.html">
-									<img src="{{ asset('assets/website/images/logo-2.jpg') }}" class="logo_main" alt="" style="width:72px;">
-									<img src="{{ asset('assets/website/images/logo-2.jpg') }}" class="logo_fixed" alt="" ></a>
+									<a href="{{ route('home') }}">
+									<img src="{{ asset('assets/website/images/logo-2.png') }}" class="logo_main" alt="" style="width:72px;">
+									<img src="{{ asset('assets/website/images/logo-2.png') }}" class="logo_fixed" alt="" ></a>
 								</div>
 							</div>
 							<div class="contact_button">
-								<a class="first_button" href="our-causes.html">Donate</a> </div>
+								</div>
 							<div class="menu_main_wrap">
 								<nav class="menu_main_nav_area menu_hover_fade">
 									<ul id="menu_main" class="menu_main_nav">
@@ -32,7 +32,7 @@
 				<div class="content_wrap">
 					<div class="menu_button icon-menu"></div>
 					<div class="logo">
-						<a href="index.html"><img src="{{ asset('assets/website/images/logo-2.png') }}" class="logo_main" alt="" width="118" height="61"></a>
+						<a href="{{ route('home') }}"><img src="{{ asset('assets/website/images/logo-2.png') }}" class="logo_main" alt="" width="118" height="61"></a>
 					</div>
 				</div>
 				<div class="side_wrap">

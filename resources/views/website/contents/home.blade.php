@@ -36,7 +36,7 @@
 												</div>
 												@endforeach
 											</div>
-											<div class="sc_services_button sc_item_button"><a href="shop.html" class="sc_button sc_button_square sc_button_style_filled sc_button_size_large  sc_button_iconed icon-arrow">Learn more about Hope</a></div>
+											<div class="sc_services_button sc_item_button"><a href="{{ route('missions') }}" class="sc_button sc_button_square sc_button_style_filled sc_button_size_large  sc_button_iconed icon-arrow">Learn more about Mission</a></div>
 										</div>
 										<!-- /.sc_services -->
 									</div>
@@ -71,20 +71,8 @@
 													<!-- .entry-header -->
 													<div class="post_content entry-content">
 														<p>{{ str_limit($item->description, 100)}}</p>
-														<div class="post_info_donations">
-															<div class="top">
-																<span class="post_info_item post_raised"><span class="post_counters_label">Raised</span></span>
-																<span class="post_info_item post_goal"><span class="post_counters_label">Goal</span></span>
-															</div>
-															<div class="middle">
-																<span></span>
-															</div>
-															<div class="bottom">
-																<span class="post_counters_number_raised">3535.00 USD</span>
-																<span class="post_counters_number_goal">9000.00 USD</span>
-															</div>
-														</div>
-														<a class="more-link" href="{{ route('project_detail', $item) }}">Donate</a> </div>
+														
+														<a class="more-link" href="{{ route('project_detail', $item) }}">Detail</a> </div>
 													<!-- .entry-content -->
 												</div>
 												<!-- .post_body -->

@@ -22,6 +22,11 @@ class WebsiteController extends Controller
         $view->with('mission', $mission);
         return $view;
     }
+    public function missions(){
+        $view = view($this->getPage('missions'));
+        $view->with('mission_list', Project::where('active', true)->orderBy('id', 'desc')->paginate(9));
+        return $view;
+    }
     public function projects(){
         $view = view($this->getPage('projects'));
         $view->with('project_list', Project::where('active', true)->orderBy('id', 'desc')->paginate(9));
