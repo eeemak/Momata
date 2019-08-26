@@ -36,7 +36,7 @@
 			<div class="top_panel_title top_panel_style_1  title_present scheme_original">
 				<div class="top_panel_title_inner top_panel_inner_style_1  title_present_inner">
 					<div class="content_wrap">
-						<h1 class="page_title">Is a Nonprofit Internship the Best Choice for You?</h1> </div>
+						<h1 class="page_title">{{ $event->title }}</h1> </div>
 				</div>
 			</div>
 			<div class="page_content_wrap wrapper page_paddings_yes">
@@ -51,9 +51,9 @@
 											<a href="events.html"> &laquo; All Events</a>
 										</p>
 										<!-- Notices -->
-										<h1 class="tribe-events-single-event-title">Is a Nonprofit Internship the Best Choice for You?</h1>
+										<h1 class="tribe-events-single-event-title">{{ $event->title }}</h1>
 										<div class="tribe-events-schedule tribe-clearfix">
-											<h2><span class="tribe-event-date-start">October 10, 2016 @ 8:00 am</span> - <span class="tribe-event-date-end">February 26, 2017 @ 5:00 pm</span></h2> <span class="tribe-events-cost">$45</span>
+											<h2><span class="tribe-event-date-start">{{ optional($event->start_date)->format('F d, Y') }} @ 8:00 am</span> - <span class="tribe-event-date-end">{{ optional($event->end_date)->format('F d, Y') }} @ 5:00 pm</span></h2> <span class="tribe-events-cost">$45</span>
 										</div>
 										<!-- Event header -->
 										<div id="tribe-events-header" data-title="Upcoming Events &#8211; Is a Nonprofit Internship the Best Choice for You? &#8211; Hope">
@@ -68,13 +68,11 @@
 										<!-- #tribe-events-header -->
 										<div id="post-436" class="post-436 tribe_events type-tribe_events status-publish has-post-thumbnail hentry tag-charity tag-children tag-safety">
 											<!-- Event featured image, but exclude link -->
-											<div class="tribe-events-event-image"><img width="2340" height="1560" src="{{ asset('assets/website/images/image-6.jpg') }}" class="attachment-full size-full" alt="image-6" srcset="{{ asset('assets/website/images/image-6.jpg') }} 2340w, {{ asset('assets/website/images/image-6-300x200.jpg') }} 300w, {{ asset('assets/website/images/image-6-768x512.jpg') }} 768w, {{ asset('assets/website/images/image-6-1024x683.jpg') }} 1024w"
+											<div class="tribe-events-event-image"><img width="2340" height="1560" src="{{ asset($event->image_path ?? 'images/no-image.png') }}" class="attachment-full size-full" alt="image-6" srcset="{{ asset($event->image_path ?? 'images/no-image.png') }} 2340w, {{ asset($event->image_path ?? 'images/no-image.png') }} 300w, {{ asset($event->image_path ?? 'images/no-image.png') }} 768w, {{ asset($event->image_path ?? 'images/no-image.png') }} 1024w"
 																sizes="(max-width: 2340px) 100vw, 2340px" /></div>
 											<!-- Event content -->
 											<div class="tribe-events-single-event-description tribe-events-content">
-												<p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
-												<p>Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur? At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
-												<p>Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+												<p style="min-height: 400px">{{ $event->description }}</p>
 											</div>
 											<!-- .tribe-events-single-event-description -->
 											<div class="tribe-events-cal-links">
@@ -88,9 +86,9 @@
 													<h3 class="tribe-events-single-section-title"> Details </h3>
 													<dl>
 														<dt> Start: </dt>
-														<dd><abbr class="tribe-events-abbr updated published dtstart" title="2016-10-10"> October 10 @ 8:00 am </abbr></dd>
+														<dd><abbr class="tribe-events-abbr updated published dtstart" title="2016-10-10"> {{ optional($event->start_date)->format('F d, Y') }} @ 8:00 am </abbr></dd>
 														<dt> End: </dt>
-														<dd><abbr class="tribe-events-abbr dtend" title="2017-02-26"> February 26, 2017 @ 5:00 pm </abbr></dd>
+														<dd><abbr class="tribe-events-abbr dtend" title="2017-02-26"> {{ optional($event->end_date)->format('F d, Y') }} @ 5:00 pm </abbr></dd>
 														<dt> Cost: </dt>
 														<dd class="tribe-events-event-cost"> $45 </dd>
 														<dt>Event Tags:</dt>

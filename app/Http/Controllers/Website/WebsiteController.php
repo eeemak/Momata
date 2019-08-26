@@ -17,7 +17,7 @@ class WebsiteController extends Controller
         $view->with('event_list', Event::where('active', true)->where('featured', true)->orderBy('id', 'desc')->get());
         return $view;
     }
-    public function mission_detail(Event $mission){
+    public function mission_detail(Mission $mission){
         $view = view($this->getPage('mission_detail'));
         $view->with('mission', $mission);
         return $view;
@@ -27,7 +27,7 @@ class WebsiteController extends Controller
         $view->with('project_list', Project::where('active', true)->orderBy('id', 'desc')->paginate(9));
         return $view;
     }
-    public function project_detail(Event $project){
+    public function project_detail(Project $project){
         $view = view($this->getPage('project_detail'));
         $view->with('project', $project);
         return $view;
@@ -37,7 +37,7 @@ class WebsiteController extends Controller
         $view->with('news_list', News::where('active', true)->orderBy('id', 'desc')->paginate(5));
         return $view;
     }
-    public function news_detail(Event $news){
+    public function news_detail(News $news){
         $view = view($this->getPage('news_detail'));
         $view->with('news', $news);
         return $view;
