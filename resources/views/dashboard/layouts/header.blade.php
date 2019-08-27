@@ -9,7 +9,7 @@
     </div>
     <a id="mobile_btn" class="mobile_btn pull-left" href="#sidebar"><i class="fa fa-bars" aria-hidden="true"></i></a>
     <ul class="nav navbar-nav navbar-right user-menu pull-right">
-        <li class="dropdown hidden-xs">
+        {{-- <li class="dropdown hidden-xs">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell-o"></i> <span class="badge bg-primary pull-right">3</span></a>
             <div class="dropdown-menu notifications">
                 <div class="topnav-dropdown-header">
@@ -80,31 +80,29 @@
                     <a href="activities.html">View all Notifications</a>
                 </div>
             </div>
-        </li>
-        <li class="dropdown hidden-xs">
+        </li> --}}
+        {{-- <li class="dropdown hidden-xs">
             <a href="javascript:;" id="open_msg_box" class="hasnotifications"><i class="fa fa-comment-o"></i> <span class="badge bg-primary pull-right">8</span></a>
-        </li>
+        </li> --}}
         <li class="dropdown">
             <a href="profile.html" class="dropdown-toggle user-link" data-toggle="dropdown" title="Admin">
-                <span class="user-img"><img class="img-circle" src="{{ asset('assets/img/user.jpg') }}" width="40" alt="Admin">
+                <span class="user-img"><img class="img-circle" src="{{ asset(Auth::user()->image_path ?? 'assets/img/user.jpg') }}" width="40" alt="User Name">
                     <span class="status online"></span></span>
                     <span> {{ Auth::user()->name }}</span>
                 <i class="caret"></i>
             </a>
             <ul class="dropdown-menu">
-                <li><a href="profile.html">My Profile</a></li>
-                <li><a href="edit-profile.html">Edit Profile</a></li>
-                <li><a href="settings.html">Settings</a></li>
-                <li><a href="{{ route('logout') }}">Logout</a></li>
+                <li><a href="{{ route('profile') }}"><i class="fa fa-user"></i> My Profile</a></li>
+                <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                <li><a href="{{ route('logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
             </ul>
         </li>
     </ul>
     <div class="dropdown mobile-user-menu pull-right">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
         <ul class="dropdown-menu pull-right">
-            <li><a href="profile.html">My Profile</a></li>
-            <li><a href="edit-profile.html">Edit Profile</a></li>
-            <li><a href="settings.html">Settings</a></li>
+            <li><a href="{{ route('profile') }}">My Profile</a></li>
+            <li><a href="#">Settings</a></li>
             <li><a href="{{ route('logout') }}">Logout</a></li>
         </ul>
     </div>

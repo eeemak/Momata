@@ -23,8 +23,11 @@ Route::group(['prefix'=>'dashboard'], function(){
     Route::group(['middleware' => 'auth'], function () {
         Route::get('/logout', ['as' => 'logout', 'uses' => 'DashboardController@logout']);
         Route::get('/', ['as'=>'dashboard', 'uses'=>'DashboardController@dashboard']);
-        Route::get('/change_activation', ['as'=>'change_activation', 'uses'=>'DashboardController@change_activation']);
-        Route::get('/change_feature', ['as'=>'change_feature', 'uses'=>'DashboardController@change_feature']);
+        Route::get('/profile', ['as'=>'profile', 'uses'=>'DashboardController@view_profile']);
+        Route::put('/update-profile', ['as'=>'update_profile', 'uses'=>'DashboardController@update_profile']);
+        Route::put('/update-password', ['as'=>'update_password', 'uses'=>'DashboardController@update_password']);
+        Route::get('/change-activation', ['as'=>'change_activation', 'uses'=>'DashboardController@change_activation']);
+        Route::get('/change-feature', ['as'=>'change_feature', 'uses'=>'DashboardController@change_feature']);
         Route::resource('mission', 'MissionController');
         Route::resource('project', 'ProjectController');
         Route::resource('news', 'NewsController');

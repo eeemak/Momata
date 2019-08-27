@@ -19,18 +19,18 @@
                         @method('PUT')
                         <div class="form-group {{ $errors->has('title') ? ' has-error' : '' }}">
                             <label>News Title <span class="text-danger">*</span></label>
-                            <input name="title" class="form-control" type="text" value="{{ $news->title }}">
+                            <input name="title" class="form-control" type="text" value="{{ old('title') ?? $news->title }}">
                             <small class="text-danger">{{ $errors->first('title') }}</small>
                         </div>
                         <div class="form-group {{ $errors->has('description') ? ' has-error' : '' }}">
                             <label>Description <span class="text-danger">*</span></label>
-                            <textarea name="description" rows="5" cols="5" class="form-control summernote" placeholder="Enter your description here">{{ $news->description }}</textarea>
+                            <textarea name="description" rows="5" cols="5" class="form-control summernote" placeholder="Enter your description here">{{ old('description') ?? $news->description }}</textarea>
                             <small class="text-danger">{{ $errors->first('description') }}</small>
                         </div>
                         <div class="form-group {{ $errors->has('date') ? ' has-error' : '' }}">
                             <label>Date</label>
                             <div class="cal-icon">
-                                <input name="date" class="form-control datetimepicker" type="text" value="{{ optional($news->date)->format(config('dashboard.input_date_format')) }}">
+                                <input name="date" class="form-control datetimepicker" type="text" value="{{ old('date') ?? optional($news->date)->format(config('dashboard.input_date_format')) }}">
                             </div>
                             <small class="text-danger">{{ $errors->first('date') }}</small>
                         </div>
@@ -42,7 +42,7 @@
                             @endif
                             <label>Image</label>
                             <input name="image" class="form-control" type="file">
-                            <small>Max: 500 KB</small>
+                            <small>Max: {{ config('dashboard.modules.news.upload_max_file_size') }} KB</small>
                             <small class="text-danger">{{ $errors->first('image') }}</small>
                         </div>
                         <div class="row">
@@ -55,9 +55,9 @@
                                                 $featured_remain_count = $news->featured_remain_count() + $news->featured;
                                             @endphp
                                             <input type="radio" name="featured" {{ $news->featured ? 'checked' : null }} value="1" @if ($featured_remain_count <= 0) disabled @endif> Featured
-                                            @if ($featured_remain_count <= 0) 
+                                            @if ($featured_remain_count <= 0)
                                             <small class="text-danger" title="Max feature item: {{ config('dashboard.modules.news.featured_max_item') }}">(Exceed limit)</small>
-                                            @else 
+                                            @else
                                             <small class="text-primary" title="Max feature item: {{ config('dashboard.modules.news.featured_max_item') }}">(Remain {{ $featured_remain_count }})</small>
                                             @endif
                                         </label>

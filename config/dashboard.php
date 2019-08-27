@@ -7,6 +7,11 @@ return [
    'input_date_format'=> 'd/m/Y', // Use same date format in frontend datetimepicker
 
    'modules'=> [
+      'profile'=>[
+         'upload_file_location'=>'uploads/profile/', //from public
+         'upload_max_file_size'=>'500', //in KB
+         'upload_accept_file_type'=>'png,jpg,jpeg,bmp',
+      ],
       'mission'=>[
          'upload_file_location'=>'uploads/mission/', //from public
          'upload_max_file_size'=>'500', //in KB
