@@ -17,7 +17,7 @@
 									<div id="sc_services_1443866382_wrap" class="sc_services_wrap">
 										<div id="sc_services_1443866382" class="sc_services sc_services_style_services-1 sc_services_type_images  margin_top_huge margin_bottom_huge">
 											<h2 class="sc_services_title sc_item_title sc_item_title_without_descr">Our Mission</h2>
-											<div class="sc_services_descr sc_item_descr">Protecting the rights and wellbeing of EVERY child</div>
+											<div class="sc_services_descr sc_item_descr">Protecting the rights and wellbeing of every disadvantaged Women</div>
 											<div class="sc_columns columns_wrap">
 												@foreach ($mission_list as $item)
 												<div class="column-1_3 column_padding_bottom">
