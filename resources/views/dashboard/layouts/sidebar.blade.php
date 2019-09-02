@@ -18,6 +18,9 @@
                     <li class="{{ Request::is('dashboard/event*') ? 'active' : null }}">
                         <a href="{{ route('event.index') }}"><i class="fa fa-calendar"></i> Events</a>
                     </li>
+                    <li class="{{ Request::is('dashboard/gallery*') ? 'active' : null }}">
+                        <a href="{{ route('gallery.index') }}"><i class="fa fa-picture-o"></i> Gallery</a>
+                    </li>
                     @role('admin')
                     <li class="menu-title">Administration</li>
                     <li class="{{ Request::is('dashboard/users') ? 'active' : null }}">

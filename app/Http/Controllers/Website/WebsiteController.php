@@ -6,6 +6,7 @@ use App\Models\Event;
 use App\Models\Mission;
 use App\Models\News;
 use App\Models\Project;
+use App\Models\Gallery;
 use Illuminate\Http\Request;
 
 class WebsiteController extends Controller
@@ -15,6 +16,7 @@ class WebsiteController extends Controller
         $view->with('mission_list', Mission::where('active', true)->where('featured', true)->orderBy('id', 'desc')->get());
         $view->with('project_list', Project::where('active', true)->where('featured', true)->orderBy('id', 'desc')->get());
         $view->with('event_list', Event::where('active', true)->where('featured', true)->orderBy('id', 'desc')->get());
+        $view->with('gallery_list', Gallery::where('active', true)->where('featured', true)->orderBy('id', 'desc')->get());
         return $view;
     }
     public function mission_detail(Mission $mission){
@@ -59,6 +61,7 @@ class WebsiteController extends Controller
     }
     public function photo_gallery(){
         $view = view($this->getPage('photo_gallery'));
+        $view->with('gallery_list', Gallery::where('active', true)->orderBy('id', 'desc')->paginate(9));
         return $view;
     }
     public function about_us(){
