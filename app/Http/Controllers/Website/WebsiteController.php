@@ -57,6 +57,10 @@ class WebsiteController extends Controller
         $view->with('event', $event);
         return $view;
     }
+    public function photo_gallery(){
+        $view = view($this->getPage('photo_gallery'));
+        return $view;
+    }
     public function about_us(){
         return view($this->getPage('about_us'));
     }

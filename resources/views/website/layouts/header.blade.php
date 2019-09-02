@@ -17,7 +17,8 @@
                                     	<li class="menu-item menu-item-home  {{ Request::is('/') ? 'current-menu-item' : null }}"><a href="{{ route('home') }}"><span>Home</span></a></li>
                                         <li class="menu-item {{ Request::is('projects*') ? 'current-menu-item' : null }}"><a href="{{ route('projects') }}"><span>Project/Program</span></a></li>
                                         <li class="menu-item  {{ Request::is('news*') ? 'current-menu-item' : null }}"><a href="{{ route('news') }}"><span>News</span></a></li>
-                                        <li class="menu-item  {{ Request::is('events*') ? 'current-menu-item' : null }}"><a href="{{ route('events') }}"><span>Events</span></a></li>
+                                        <!-- <li class="menu-item  {{ Request::is('events*') ? 'current-menu-item' : null }}"><a href="{{ route('events') }}"><span>Events</span></a></li> -->
+                                        <li class="menu-item  {{ Request::is('photo-gallery') ? 'current-menu-item' : null }}"><a href="{{ route('photo-gallery') }}"><span>Photo Gallery</span></a></li>
                                         <li class="menu-item menu-item-45  {{ Request::is('about-us') ? 'current-menu-item' : null }}"><a href="{{ route('about_us') }}"><span>About Us</span></a></li>
 										<li class="menu-item  {{ Request::is('contacts') ? 'current-menu-item' : null }}"><a href="{{ route('contacts') }}"><span>Contacts</span></a></li>
 									</ul>

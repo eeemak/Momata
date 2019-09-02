@@ -39,19 +39,12 @@
 																</div>
 																<div class="sc_form_address_field">
 																	<span class="sc_form_address_label">Email:</span>
-																	<span class="sc_form_address_data"><a href="mailto:momota.ngo@yahooo.com">momota.ngo@yahooo.com</a></span>
+																	<span class="sc_form_address_data"><a href="mailto:momota.ngo@yahoo.com">momota.ngo@yahoo.com</a></span>
 																</div>
 
 																<h4 class="info_title_des">MOMOTA</h4>
-																<div class="sc_form_descr">A regional non-government Organization</div>
-																<h4 class="info_title_soc">Stay Social</h4>
-																<div class="sc_socials sc_socials_type_icons sc_socials_shape_round sc_socials_size_tiny">
-																	<div class="sc_socials_item"><a href="#" target="_blank" class="social_icons social_twitter"><span class="icon-twitter"></span></a></div>
-																	<div class="sc_socials_item"><a href="#" target="_blank" class="social_icons social_facebook"><span class="icon-facebook"></span></a></div>
-																	<div class="sc_socials_item"><a href="#" target="_blank" class="social_icons social_vine"><span class="icon-vine"></span></a></div>
-																	<div class="sc_socials_item"><a href="#" target="_blank" class="social_icons social_youtube"><span class="icon-youtube"></span></a></div>
-																	<div class="sc_socials_item"><a href="#" target="_blank" class="social_icons social_pinterest-circled"><span class="icon-pinterest-circled"></span></a></div>
-																</div>
+																<div class="sc_form_descr">We are here not for income, but for outcome</div>
+<p>MOMOTA is a regional non govermental organization establishment in the year 2006. It is an organisation of poor, self-employed and women labour workers. The purpose of us is to upgrade socio-economic condition of the disadvantaged groups of people in health, living condition and education. Momota intends to increase consciousness, community support and skilled staff with a view to initiating sustainable journey in development arena of Bangladesh. We specially support those women who earn a living through their own labour or small businesses. They do not obtain regular salaried employment with welfare benefits like workers in the organised sector like garments worker. They are the most unprotected labour force of our country. Constituting 93% of the labour force, these are workers of the unorganised sector. Of the female labour force in Chittagong, Bangladesh, more than 94% are in the unorganised sector. However their work is not counted and hence remains invisible. And our operation area is consist of chittagong city corporation, hathazari, Anowara, Banskhali and Cox's bazar shadar.</p>
 															</div>
 															<!-- <div class="sc_form_fields column-3_5">
 																<form id="sc_form_1145226909_form" class="sc_input_hover_default" data-formtype="form_2" method="post" action="#">
