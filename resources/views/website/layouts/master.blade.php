@@ -21,6 +21,7 @@
 	<link property="stylesheet" rel='stylesheet' id='charity_is_hope-shortcodes-style-css' href="{{asset('assets/website/js/vendor/shortcodes/theme.shortcodes.css') }}" type='text/css' media='all' />
 	<link property="stylesheet" rel='stylesheet' id='charity_is_hope-responsive-style-css' href="{{asset('assets/website/css/responsive.css') }}" type='text/css' media='all' />
 	<link property="stylesheet" rel='stylesheet' id='trx-donations-style-css'  href="{{asset('assets/website/js/vendor/plugins/trx_donations/trx_donations.css') }}" type='text/css' media='all' />
+	<link property="stylesheet" rel='stylesheet' id='charity_is_hope-grid-css' href="{{asset('assets/website/css/grid.css') }}" type='text/css' media='all' />
     {{-- Page Styles --}}
     @yield('style')
 </head>
@@ -71,7 +72,8 @@
 	<script type="text/javascript" src="{{ asset('assets/website/js/vendor/plugins/revslider/public/assets/js/extensions/revolution.extension.slideanims.min.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('assets/website/js/vendor/plugins/revslider/public/assets/js/extensions/revolution.extension.layeranimation.min.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('assets/website/js/vendor/plugins/revslider/public/assets/js/extensions/revolution.extension.navigation.min.js') }}"></script>
-    {{-- Page Scripts --}}
+    <script type='text/javascript' src="{{ asset('assets/website/js/custom/grid.js') }}"></script>
+	{{-- Page Scripts --}}
     @yield('script')
 </body>
 </html>

@@ -10,6 +10,7 @@ Route::get('/projects/{project}/project_detail', ['as'=>'project_detail', 'uses'
 Route::get('/news', ['as'=>'news', 'uses'=>'WebsiteController@news']);
 Route::get('/news/{news}/news_detail', ['as'=>'news_detail', 'uses'=>'WebsiteController@news_detail']);
 Route::get('/events', ['as'=>'events', 'uses'=>'WebsiteController@events']);
+Route::get('/photo-gallery', ['as'=>'photo-gallery', 'uses'=>'WebsiteController@photo_gallery']);
 Route::get('/events/{event}/event_detail', ['as'=>'event_detail', 'uses'=>'WebsiteController@event_detail']);
 Route::get('/about-us', ['as'=>'about_us', 'uses'=>'WebsiteController@about_us']);
 Route::get('/contacts', ['as'=>'contacts', 'uses'=>'WebsiteController@contacts']);
@@ -32,5 +33,6 @@ Route::group(['prefix'=>'dashboard'], function(){
         Route::resource('project', 'ProjectController');
         Route::resource('news', 'NewsController');
         Route::resource('event', 'EventController');
+        Route::resource('gallery', 'GalleryController');
     });
 });

@@ -30,18 +30,7 @@
                                                     <!-- .entry-header -->
                                                     <div class="post_content entry-content">
                                                         <p>{{ str_limit($item->description) }}</p>
-                                                        <div class="post_info_donations">
-                                                            <div class="top">
-                                                                <span class="post_info_item post_raised"><span class="post_counters_label">Raised</span></span>
-                                                                <span class="post_info_item post_goal"><span class="post_counters_label">Goal</span></span>
-                                                            </div>
-                                                            <div class="middle"><span></span></div>
-                                                            <div class="bottom">
-                                                                <span class="post_counters_number_raised">3535.00 USD</span>
-                                                                <span class="post_counters_number_goal">9000.00 USD</span>
-                                                            </div>
-                                                        </div>
-                                                        <a class="more-link" href="{{ route('project_detail', $item) }}">Donate</a> </div>
+                                                        <a class="more-link" href="{{ route('project_detail', $item) }}">Detail</a> </div>
                                                     <!-- .entry-content -->
                                                 </div>
                                                 <!-- .post_body -->
