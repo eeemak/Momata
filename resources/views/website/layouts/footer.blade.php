@@ -70,7 +70,7 @@
                                 <h5 class="widget_title">Connect With Us</h5>
                                 <strong>Address:</strong> 3,G,A Bhaban (Unit-1) 4th Floor, Anderkinna, Chittagong<br>
                                 <strong>Call:</strong> 01919-886606<br>
-                                <strong>Email:</strong> momota.ngo@yahooo.com<br>
+                                <strong>Email:</strong> momota.ngo@yahoo.com<br>
                                 <div class="widget_inner">
                                     <div class="sc_socials sc_socials_type_icons sc_socials_shape_square sc_socials_size_small">
                                         <div class="sc_socials_item"><a href="#" target="_blank" class="social_icons social_twitter"><span class="icon-twitter"></span></a></div>
