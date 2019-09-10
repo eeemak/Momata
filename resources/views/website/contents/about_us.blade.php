@@ -19,7 +19,7 @@
 									<div class="column_container column-6_12">
 										<div class="column-inner">
 											<div class="h03"></div>
-											<figure class="sc_image  sc_image_shape_square margin_bottom_small"><img src="{{ asset('assets/website/images/about_1.jpg') }}" alt="" /></figure>
+											<figure class="sc_image  sc_image_shape_square margin_bottom_small"><img src="{{ asset('assets/website/images/logo-2.png') }}" class="logo_main" alt="" ></figure>
 										</div>
 									</div>
 									<div class="column_container column-6_12">
