@@ -9,12 +9,6 @@
                 <div class="post_sidebar">
                     <div class="post_featured">
                         <img width="570" height="320" src="{{ asset($news->image_path ?? 'images/no-image.png') }}" class="attachment-thumb_med size-thumb_med" alt="Sponsor Ecology Today" /> </div>
-                    <!-- .post_featured -->
-                    <div class="post_help">Help us attain our goal</div>
-                    <div class="post_supporters">
-                        <h5 class="post_supporters_title">Group&#039;s supporters to date</h5>
-                        <div class="post_supporters_count">No supporters yet</div>
-                    </div>
                 </div>
 
                 <div class="post_body">

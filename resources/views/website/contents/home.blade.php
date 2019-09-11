@@ -28,7 +28,7 @@
 															</div>
 														</div>
 														<div class="sc_services_item_content">
-															<h4 class="sc_services_item_title"><a href="{{ route('mission_detail', $item) }}">{{ str_limit($item->description, 100) }}</a></h4>
+															<h4 class="sc_services_item_title"><a href="{{ route('mission_detail', $item) }}">{{ str_limit($item->description, 150) }}</a></h4>
 															<div class="sc_services_item_description">
 															</div>
 														</div>
@@ -71,7 +71,7 @@
 													<!-- .entry-header -->
 													<div class="post_content entry-content">
 														<p>{{ str_limit($item->description, 100)}}</p>
-														
+
 														<a class="more-link" href="{{ route('project_detail', $item) }}">Detail</a> </div>
 													<!-- .entry-content -->
 												</div>
@@ -87,29 +87,6 @@
 						</div>
 					</div>
 				@endif
-
-					<div class="wrap">
-						<div class="column_container">
-							<div class="column-inner">
-								<div class="wrapper">
-									<div class="h10"></div>
-									<div class="sc_promo margin_top_huge margin_bottom_huge sc_promo_size_large">
-										<div class="sc_promo_inner">
-											<div class="sc_promo_image"></div>
-											<div class="sc_promo_block sc_align_left">
-												<div class="sc_promo_block_inner">
-													<h2 class="sc_promo_title sc_item_title sc_item_title_without_descr">Become a Volunteer</h2>
-													<div class="sc_promo_descr sc_item_descr">Integer bibendum orci eu velit iaculis auctor. Mauris at purus interdum, ullamcorper justo vel, egestas justo. Donec pretium cursus nisi at dapibus. Integer ut erat facilisis, faucibus tellus vel, laoreet sem.</div>
-													<div class="sc_promo_button sc_item_button"><a href="#" class="sc_button sc_button_square sc_button_style_filled sc_button_size_large  sc_button_iconed icon-arrow">Donate Now</a></div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="h10"></div>
-								</div>
-							</div>
-						</div>
-					</div>
 					<div class="block_1473684441770">
 						<div class="wrapper">
 						<div class="columns_wrap">
@@ -190,7 +167,7 @@
 						</div>
 					</div>
 					<div class="page_content_wrap page_paddings_yes">
-					
+
 				@if ($gallery_list->count() > 0)
 				<div class="content_wrap">
 					<div class="content">
