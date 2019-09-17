@@ -13,9 +13,9 @@ class WebsiteController extends Controller
 {
     public function home(){
         $view = view($this->getPage('home'));
-        $view->with('mission_list', Mission::where('active', true)->where('featured', true)->orderBy('id', 'desc')->get());
-        $view->with('project_list', Project::where('active', true)->where('featured', true)->orderBy('id', 'desc')->get());
-        $view->with('event_list', Event::where('active', true)->where('featured', true)->orderBy('id', 'desc')->get());
+        $view->with('mission_list', Mission::where('active', true)->where('featured', true)->orderBy('date', 'desc')->orderBy('id', 'desc')->get());
+        $view->with('project_list', Project::where('active', true)->where('featured', true)->orderBy('date', 'desc')->orderBy('id', 'desc')->get());
+        $view->with('event_list', Event::where('active', true)->where('featured', true)->orderBy('start_date', 'desc')->orderBy('id', 'desc')->get());
         $view->with('gallery_list', Gallery::where('active', true)->where('featured', true)->orderBy('id', 'desc')->get());
         return $view;
     }
@@ -26,12 +26,12 @@ class WebsiteController extends Controller
     }
     public function missions(){
         $view = view($this->getPage('missions'));
-        $view->with('mission_list', Project::where('active', true)->orderBy('id', 'desc')->paginate(9));
+        $view->with('mission_list', Project::where('active', true)->orderBy('date', 'desc')->orderBy('id', 'desc')->paginate(9));
         return $view;
     }
     public function projects(){
         $view = view($this->getPage('projects'));
-        $view->with('project_list', Project::where('active', true)->orderBy('id', 'desc')->paginate(9));
+        $view->with('project_list', Project::where('active', true)->orderBy('date', 'desc')->orderBy('id', 'desc')->paginate(9));
         return $view;
     }
     public function project_detail(Project $project){
@@ -41,7 +41,7 @@ class WebsiteController extends Controller
     }
     public function news(){
         $view = view($this->getPage('news'));
-        $view->with('news_list', News::where('active', true)->orderBy('id', 'desc')->paginate(5));
+        $view->with('news_list', News::where('active', true)->orderBy('date', 'desc')->orderBy('id', 'desc')->paginate(5));
         return $view;
     }
     public function news_detail(News $news){
@@ -51,7 +51,7 @@ class WebsiteController extends Controller
     }
     public function events(){
         $view = view($this->getPage('events'));
-        $view->with('event_list', Event::where('active', true)->orderBy('id', 'desc')->paginate(5));
+        $view->with('event_list', Event::where('active', true)->orderBy('start_date', 'desc')->orderBy('id', 'desc')->paginate(5));
         return $view;
     }
     public function event_detail(Event $event){
